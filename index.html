@@ -96,7 +96,17 @@
       text-align: center;
       font-size: 18px;
     }
-  </style>
+  .email-btn { display:inline-block; padding:10px 20px; background:#ff7d6e; color:white; border-radius:30px; text-decoration:none; font-weight:bold; }
+.email-btn:hover { opacity:0.85; }
+/* Fade-in animation */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeInUp 0.9s ease both;
+}
+</style>
 </head>
 <body>
 
@@ -109,14 +119,14 @@
   </nav>
 </header>
 
-<div class="hero">
+<div class="hero fade-in">
   <img src="images/headshot.jpg" alt="Shivam Headshot">
   <h1>Shivam Gaind</h1>
   <p>Mechanical Engineer • Robotics • Additive Manufacturing • Control Systems</p>
   <a class="resume-btn" href="pdfs/shivam-gaind-resume.pdf" target="_blank">Download Resume</a>
 </div>
 
-<section id="about">
+<section id="about" class="fade-in">
   <h2>About Me</h2>
   <p style="max-width:800px;margin:auto;text-align:center;">
     Hi, I'm Shivam Gaind - a mechanical engineer passionate about robotics, advanced manufacturing,
@@ -127,7 +137,7 @@
 
 <section id="projects">
   <h2>Projects</h2>
-  <div class="project-grid">
+  <div class="project-grid fade-in">
 
     <div class="project-card">
       <img src="images/cooling-system.jpg" alt="Cooling System">
@@ -180,10 +190,10 @@
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="fade-in">
   <h2>Contact</h2>
-  <p>Email: shivam.gaind@gmail.com</p>
-  <p>LinkedIn: linkedin.com/in/shivamgaind</p>
+  <p>Email: <a href="mailto:shivam.gaind@gmail.com" class="email-btn">shivam.gaind@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/shivam-gaind/" target="_blank">linkedin.com/in/shivam-gaind</a></p>
 </section>
 
 </body>
