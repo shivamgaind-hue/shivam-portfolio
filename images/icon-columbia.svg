@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="80" viewBox="0 0 120 80" role="img" aria-label="Columbia University">
+  <rect width="120" height="80" rx="10" fill="#fff"/>
+  <circle cx="30" cy="40" r="20" fill="#b9d9eb"/>
+  <path d="M30 19 35 34h16l-13 9 5 15-13-9-13 9 5-15-13-9h16Z" fill="#12395a"/>
+  <text x="58" y="35" fill="#12395a" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="800">Columbia</text>
+  <text x="58" y="50" fill="#12395a" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">University</text>
+</svg>

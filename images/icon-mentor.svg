@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="80" viewBox="0 0 120 80" role="img" aria-label="Mentor">
+  <rect width="120" height="80" rx="10" fill="#fff"/>
+  <circle cx="31" cy="31" r="10" fill="#526b5c"/>
+  <path d="M14 58c4-13 30-13 34 0" fill="#526b5c"/>
+  <path d="M52 25h42v28H52z" fill="#eaf0ed" stroke="#526b5c" stroke-width="3"/>
+  <path d="M60 34h25M60 44h18" stroke="#526b5c" stroke-width="3" stroke-linecap="round"/>
+</svg>

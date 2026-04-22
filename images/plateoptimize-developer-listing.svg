@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="420" viewBox="0 0 2048 420" role="img" aria-labelledby="title desc">
+  <title id="title">PlateOptimize App Store developer listing</title>
+  <desc id="desc">App Store style screenshot showing PlateOptimize with developer listed as SHIVAM GAIND.</desc>
+  <rect width="2048" height="420" fill="#ffffff"/>
+  <image href="plateoptimize-icon.png" x="34" y="28" width="192" height="192" preserveAspectRatio="xMidYMid slice"/>
+
+  <text x="280" y="66" fill="#1d1d1f" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" font-weight="700">PlateOptimize</text>
+  <text x="280" y="106" fill="#777777" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="25" font-weight="600">Productivity</text>
+  <text x="280" y="142" fill="#ababab" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="500">Designed for iPad. Not verified for macOS.</text>
+  <rect x="280" y="176" width="114" height="50" rx="25" fill="#007aff"/>
+  <text x="337" y="208" text-anchor="middle" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="25" font-weight="700">Open</text>
+
+  <line x1="34" y1="258" x2="2014" y2="258" stroke="#e4e4e4" stroke-width="2"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" text-anchor="middle">
+    <text x="226" y="302" fill="#aaa" font-size="17" font-weight="700">AGE RATING</text>
+    <text x="226" y="346" fill="#777" font-size="34" font-weight="700">4+</text>
+    <text x="226" y="379" fill="#777" font-size="19">Years</text>
+
+    <line x1="440" y1="304" x2="440" y2="360" stroke="#ececec" stroke-width="1"/>
+    <text x="646" y="302" fill="#aaa" font-size="17" font-weight="700">CATEGORY</text>
+    <text x="646" y="348" fill="#777" font-size="42">➤</text>
+    <text x="646" y="379" fill="#777" font-size="19">Productivity</text>
+
+    <line x1="846" y1="304" x2="846" y2="360" stroke="#ececec" stroke-width="1"/>
+    <text x="1050" y="302" fill="#aaa" font-size="17" font-weight="700">DEVELOPER</text>
+    <text x="1050" y="350" fill="#777" font-size="35">▣</text>
+    <text x="1050" y="379" fill="#777" font-size="19">SHIVAM GAIND</text>
+
+    <line x1="1252" y1="304" x2="1252" y2="360" stroke="#ececec" stroke-width="1"/>
+    <text x="1456" y="302" fill="#aaa" font-size="17" font-weight="700">LANGUAGE</text>
+    <text x="1456" y="346" fill="#777" font-size="34" font-weight="700">EN</text>
+    <text x="1456" y="379" fill="#777" font-size="19">English</text>
+
+    <line x1="1658" y1="304" x2="1658" y2="360" stroke="#ececec" stroke-width="1"/>
+    <text x="1862" y="302" fill="#aaa" font-size="17" font-weight="700">SIZE</text>
+    <text x="1862" y="346" fill="#777" font-size="34" font-weight="700">3.4</text>
+    <text x="1862" y="379" fill="#777" font-size="19">MB</text>
+  </g>
+</svg>

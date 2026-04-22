@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="80" viewBox="0 0 120 80" role="img" aria-label="Penn State">
+  <rect width="120" height="80" rx="10" fill="#fff"/>
+  <path d="M16 20h28v22L30 54 16 42Z" fill="#1f4384"/>
+  <circle cx="30" cy="34" r="8" fill="#fff"/>
+  <path d="M23 38c5-6 12-6 17 0-4 3-12 4-17 0Z" fill="#1f4384"/>
+  <text x="52" y="35" fill="#1f4384" font-family="Georgia, serif" font-size="15" font-weight="700">Penn</text>
+  <text x="52" y="51" fill="#1f4384" font-family="Georgia, serif" font-size="15" font-weight="700">State</text>
+</svg>
