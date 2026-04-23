@@ -25,11 +25,13 @@ body {
   background: var(--paper);
   color: var(--ink);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img,
 svg {
   display: block;
+  max-width: 100%;
 }
 
 a {
@@ -1020,16 +1022,25 @@ html.js .reveal.visible {
     grid-template-columns: 1fr;
   }
 
-  .education-track {
+  .education-track,
+  .timeline-columns {
     grid-template-columns: 1fr;
+  }
+
+  .timeline-layout {
+    gap: 24px;
   }
 }
 
 @media (max-width: 680px) {
+  .section {
+    padding: 52px 16px;
+  }
+
   .site-header {
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 16px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
   }
 
   .brand span:last-child {
@@ -1037,7 +1048,12 @@ html.js .reveal.visible {
   }
 
   .site-nav {
-    gap: 14px;
+    gap: 12px;
+    margin-left: auto;
+  }
+
+  .site-nav a {
+    font-size: 0.9rem;
   }
 
   .hero {
@@ -1065,12 +1081,34 @@ html.js .reveal.visible {
     flex: 1 0 auto;
   }
 
+  .timeline-layout,
+  .timeline-columns,
+  .timeline-column,
+  .education-track {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .timeline-track-title {
+    margin-top: 14px;
+  }
+
+  .education-track .timeline-track-title {
+    margin-top: 0;
+  }
+
   .timeline-card {
+    border-left: 1px solid var(--line);
     padding: 14px 15px;
+    width: 100%;
   }
 
   .timeline-card[data-icon] {
-    padding-left: 76px;
+    min-height: 86px;
+    padding-left: 78px;
   }
 
   .timeline-card[data-icon]::before {
@@ -1081,12 +1119,27 @@ html.js .reveal.visible {
   }
 
   .education-track .timeline-card.org-columbia {
-    padding-left: 110px;
+    min-height: 94px;
+    padding-left: 112px;
   }
 
   .education-track .timeline-card.org-columbia::before {
     height: 44px;
     width: 80px;
+  }
+
+  .timeline-card h3 {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .timeline-card p {
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+  }
+
+  .timeline-date {
+    font-size: 0.72rem;
   }
 
   .app-preview {
