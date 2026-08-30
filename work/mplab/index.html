@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wound-Rotor Synchronous Machine Testing — MPLab, Columbia | Shivam Gaind</title>
+<meta name="description" content="Graduate research at Columbia University's Motor Drives and Power Electronics Laboratory: wound-rotor synchronous machine testing, drive-side instrumentation, data acquisition, and experimental validation against MATLAB/Simulink models." />
+<meta name="theme-color" content="#06080a" />
+<link rel="canonical" href="https://www.shivamgaind.com/work/mplab/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Wound-Rotor Synchronous Machine Testing — MPLab, Columbia" />
+<meta property="og:description" content="Current graduate research on electric machines, motor drives and power electronics at Columbia Engineering." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2306080a'/%3E%3Cpath d='M2 16c4 0 4-9 8-9s4 18 8 18 4-9 8-9 4 4 4 4' fill='none' stroke='%233ee0bd' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="/assets/instrument.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<div class="field" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hdr stuck">
+  <a class="brand" href="/" aria-label="Shivam Gaind — home">
+    <span class="brand-mark" aria-hidden="true">SG</span><span class="brand-name">Shivam Gaind</span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    <a href="/#work">Work</a><a href="/#experience">Experience</a><a href="/#timeline">Timeline</a>
+    <a href="/#index">Projects</a><a href="/#contact">Contact</a>
+  </nav>
+  <div style="display:flex;gap:.6rem;align-items:center">
+    <a class="hdr-cta" href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+<nav class="drawer" id="drawer" aria-label="Mobile">
+  <a href="/#work">Work <span>01</span></a><a href="/#experience">Experience <span>02</span></a>
+  <a href="/#timeline">Timeline <span>03</span></a><a href="/#index">Projects <span>04</span></a>
+  <a href="/#contact">Contact <span>05</span></a>
+</nav>
+
+<main id="main">
+
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="cs-back" href="/#work"><span class="arw" aria-hidden="true">←</span> All work</a>
+    <p class="kicker" style="margin-bottom:1.1rem">Current research · 01</p>
+    <h1>Wound-Rotor Synchronous Machine Testing</h1>
+    <p class="sub">
+      Graduate research in Columbia University's Motor Drives and Power Electronics Laboratory —
+      putting a wound-rotor synchronous machine on a bench, measuring what it actually does, and
+      holding the model to account against it.
+    </p>
+    <div class="cs-meta">
+      <div><span class="k">Role</span><span class="v">Graduate Researcher</span></div>
+      <div><span class="k">Laboratory</span><span class="v">MPLab · Columbia University</span></div>
+      <div><span class="k">Period</span><span class="v">Fall 2026 — Present</span></div>
+      <div><span class="k">Toolchain</span><span class="v">MATLAB / Simulink · DAQ</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cols2">
+      <div class="prose">
+        <p class="kicker">Context</p>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.1rem)">Machines are only as good as the measurements you can take of them.</h2>
+        <p>
+          A wound-rotor synchronous machine has something most machines don't: a field winding you can
+          drive independently of the stator. That extra degree of freedom is what makes the machine
+          interesting — excitation becomes a control input rather than a fixed property of a magnet —
+          and it is also what makes it hard to characterise, because now the machine's behaviour is a
+          surface over two inputs instead of a curve over one.
+        </p>
+        <p>
+          My work in MPLab sits on the experimental side of that problem. The machine has to be
+          instrumented, driven through defined operating points, and logged cleanly enough that the
+          resulting data can be compared against a MATLAB/Simulink model rather than merely described by it.
+        </p>
+        <p class="mono" style="font-size:.78rem;color:var(--muted);border-left:2px solid var(--line);padding-left:1rem">
+          This is active research. This page describes the scope and method of the work rather than
+          reporting results, which are not yet published.
+        </p>
+      </div>
+
+      <div class="prose">
+        <p class="kicker">Where I sit in it</p>
+        <ul style="margin-top:.4rem">
+          <li><strong>Machine testing.</strong> Bringing a wound-rotor synchronous machine to defined operating conditions and recording its response.</li>
+          <li><strong>Drives &amp; power electronics.</strong> The converter side that supplies the machine — what it commands, and what it actually delivers under load.</li>
+          <li><strong>Data acquisition.</strong> Voltage, current, position and speed captured with enough fidelity and time alignment to be worth analysing.</li>
+          <li><strong>Experimental validation.</strong> Comparing measured behaviour against MATLAB/Simulink models, and treating disagreement as information rather than noise.</li>
+          <li><strong>Controls.</strong> Structuring excitation and test sequences so each run isolates the effect being studied.</li>
+        </ul>
+        <div class="chips" style="margin-top:1.4rem">
+          <span>Electric machines</span><span>Motor drives</span><span>Power electronics</span>
+          <span>Experimental validation</span><span>Data acquisition</span><span>MATLAB</span>
+          <span>Simulink</span><span>Controls</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">System</p>
+      <h2>The bench, as a signal path.</h2>
+      <p class="lede">Power flows left to right along the top. Measurement flows back along the bottom. The interesting part is the loop that closes between them.</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 900 380" role="img" aria-label="Block diagram of the test bench: DC supply feeds a three-phase inverter, which drives a wound-rotor synchronous machine coupled to a dynamometer load. A separate field excitation supply feeds the rotor winding. Sensors on the machine feed a data acquisition system, which feeds a Simulink model used for comparison, which in turn informs the control and test plan driving the inverter.">
+        <!-- power row -->
+        <rect class="dg-box" x="14" y="40" width="130" height="66" rx="2"/>
+        <text class="dg-title" x="79" y="68" text-anchor="middle">DC Supply</text>
+        <text class="dg-label" x="79" y="86" text-anchor="middle">dc bus</text>
+
+        <rect class="dg-box hi" x="204" y="40" width="150" height="66" rx="2"/>
+        <text class="dg-title" x="279" y="68" text-anchor="middle">Inverter / Drive</text>
+        <text class="dg-label" x="279" y="86" text-anchor="middle">3-phase bridge</text>
+
+        <circle class="dg-box hi" cx="516" cy="73" r="54"/>
+        <text class="dg-title" x="516" y="68" text-anchor="middle">WRSM</text>
+        <text class="dg-label" x="516" y="86" text-anchor="middle">wound rotor</text>
+
+        <rect class="dg-box" x="660" y="40" width="130" height="66" rx="2"/>
+        <text class="dg-title" x="725" y="68" text-anchor="middle">Load</text>
+        <text class="dg-label" x="725" y="86" text-anchor="middle">dynamometer</text>
+
+        <path class="dg-wire" d="M144 73h60M354 73h108M570 73h90"/>
+        <path class="dg-flow" d="M144 73h60M354 73h108M570 73h90"/>
+
+        <!-- field excitation -->
+        <rect class="dg-box" x="418" y="176" width="196" height="54" rx="2"/>
+        <text class="dg-title" x="516" y="200" text-anchor="middle">Field Excitation</text>
+        <text class="dg-label" x="516" y="217" text-anchor="middle">independent rotor supply</text>
+        <path class="dg-wire" d="M516 127v49"/>
+        <path class="dg-flow" d="M516 176v-49" style="animation-delay:.35s"/>
+        <text class="dg-cap" x="530" y="152">i_f</text>
+
+        <!-- sensing -->
+        <rect class="dg-box" x="204" y="266" width="150" height="66" rx="2"/>
+        <text class="dg-title" x="279" y="294" text-anchor="middle">DAQ</text>
+        <text class="dg-label" x="279" y="312" text-anchor="middle">v · i · θ · ω</text>
+
+        <rect class="dg-box hi" x="418" y="266" width="196" height="66" rx="2"/>
+        <text class="dg-title" x="516" y="294" text-anchor="middle">Simulink Model</text>
+        <text class="dg-label" x="516" y="312" text-anchor="middle">measured vs. predicted</text>
+
+        <rect class="dg-box" x="660" y="266" width="212" height="66" rx="2"/>
+        <text class="dg-title" x="766" y="294" text-anchor="middle">Control &amp; Test Plan</text>
+        <text class="dg-label" x="766" y="312" text-anchor="middle">operating points · logging</text>
+
+        <path class="dg-wire" d="M760 106v70H700v90M354 299h64M614 299h46"/>
+        <path class="dg-wire" d="M462 73V40h-8"/>
+        <path class="dg-wire" d="M516 127v40h-260v99"/>
+        <path class="dg-flow" d="M516 127v40h-260v99" style="animation-delay:.7s"/>
+        <path class="dg-flow" d="M354 299h64M614 299h46" style="animation-delay:1s"/>
+
+        <!-- feedback to inverter -->
+        <path class="dg-wire" d="M766 266V240h96V16H279v24" stroke-dasharray="4 6"/>
+        <text class="dg-cap" x="300" y="12">command / excitation sequence</text>
+        <text class="dg-cap" x="20" y="299">measurement path →</text>
+        <text class="dg-cap" x="20" y="30">power path →</text>
+      </svg>
+    </div>
+    <p class="mono" style="font-size:.72rem;color:var(--dim);margin-top:.9rem;letter-spacing:.04em">
+      Block diagram of the test arrangement. Illustrative — not a wiring schematic.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cols2">
+      <div>
+        <div class="sec-head">
+          <p class="kicker">Principle</p>
+          <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">Two inputs, one rotating field.</h2>
+          <p class="lede">
+            Drag the sliders. Stator excitation sets the rotating field; rotor field current sets how
+            strongly the rotor locks to it. In a wound-rotor machine you control both — which is exactly
+            why it needs testing across a surface of operating points rather than a single curve.
+          </p>
+        </div>
+        <div class="diagram" style="display:grid;gap:1rem">
+          <canvas id="machine" width="720" height="420" style="width:100%;height:auto;position:relative"
+                  role="img" aria-label="Animated illustration of a rotating stator field vector and a rotor aligned behind it by a load angle."></canvas>
+          <div style="display:grid;gap:.9rem;position:relative">
+            <label class="mono" style="display:grid;gap:.4rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)">
+              Stator excitation frequency
+              <input id="freq" type="range" min="10" max="120" value="55" step="1" style="accent-color:var(--phos)" />
+            </label>
+            <label class="mono" style="display:grid;gap:.4rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)">
+              Rotor field current
+              <input id="ifld" type="range" min="10" max="100" value="65" step="1" style="accent-color:var(--phos)" />
+            </label>
+            <p class="mono" style="font-size:.7rem;color:var(--muted)">
+              Illustrative animation of machine principle — not measured laboratory data.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p class="kicker">Method</p>
+        <h3>How a run works</h3>
+        <ul>
+          <li><strong>Define the point.</strong> Fix speed, load and excitation so the run answers one question.</li>
+          <li><strong>Instrument first.</strong> Decide what has to be measured, and at what rate, before energising anything.</li>
+          <li><strong>Acquire.</strong> Log electrical and mechanical quantities together, time-aligned, so they can be cross-checked afterwards.</li>
+          <li><strong>Compare.</strong> Run the same conditions through the Simulink model and put the two traces on the same axes.</li>
+          <li><strong>Interrogate the gap.</strong> Where measurement and model disagree, decide whether the model is wrong, the setup is wrong, or the assumption underneath both is.</li>
+        </ul>
+
+        <h3 style="margin-top:1.8rem">Why this matters beyond the bench</h3>
+        <p>
+          Every traction drive, generator set and electrified powertrain is designed against a model long
+          before hardware exists. The value of a lab like this is that it is where the model gets its
+          credibility — or loses it. That habit, of trusting measurement over expectation, is the same one
+          that shows up in the rest of the work on this site.
+        </p>
+        <div class="flag-links" style="margin-top:1.6rem">
+          <a class="btn" href="/work/topology-optimization/"><span>Related: optimization research</span></a>
+          <a class="btn ghost" href="/#contact"><span>Get in touch</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-next">
+  <div class="wrap">
+    <a href="/work/plateoptimize/">
+      <span class="k">Next case study</span>
+      <h2>PlateOptimize →</h2>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <p>© <span class="mono">2026</span> Shivam Gaind</p>
+  <p class="fl">
+    <a href="/">Home</a>
+    <a href="mailto:Shivam.gaind@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/shivam-gaind/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">Résumé</a>
+  </p>
+</footer>
+
+<script src="/assets/instrument.js"></script>
+<script>
+/* Illustrative WRSM field animation */
+(function () {
+  var c = document.getElementById("machine");
+  if (!c) return;
+  var g = c.getContext("2d");
+  var freq = document.getElementById("freq");
+  var ifld = document.getElementById("ifld");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var a = 0, raf = 0, live = true;
+
+  function draw() {
+    var W = c.width, H = c.height, cx = W * 0.36, cy = H * 0.5, R = Math.min(W, H) * 0.36;
+    var f = +freq.value, i_f = +ifld.value / 100;
+    /* load angle shrinks as field current rises — illustrative relationship only */
+    var delta = (0.95 - 0.62 * i_f);
+
+    g.clearRect(0, 0, W, H);
+
+    /* stator ring */
+    g.strokeStyle = "rgba(126,168,178,.35)"; g.lineWidth = 2;
+    g.beginPath(); g.arc(cx, cy, R, 0, Math.PI * 2); g.stroke();
+    g.strokeStyle = "rgba(126,168,178,.16)";
+    g.beginPath(); g.arc(cx, cy, R * 1.16, 0, Math.PI * 2); g.stroke();
+
+    /* stator slots */
+    for (var k = 0; k < 24; k++) {
+      var th = (k / 24) * Math.PI * 2;
+      g.strokeStyle = "rgba(126,168,178,.28)"; g.lineWidth = 1;
+      g.beginPath();
+      g.moveTo(cx + Math.cos(th) * R, cy + Math.sin(th) * R);
+      g.lineTo(cx + Math.cos(th) * R * 1.16, cy + Math.sin(th) * R * 1.16);
+      g.stroke();
+    }
+
+    /* stator field vector */
+    function vec(ang, len, col, w, label) {
+      var ex = cx + Math.cos(ang) * len, ey = cy + Math.sin(ang) * len;
+      g.strokeStyle = col; g.lineWidth = w; g.lineCap = "round";
+      g.beginPath(); g.moveTo(cx, cy); g.lineTo(ex, ey); g.stroke();
+      g.beginPath();
+      g.moveTo(ex, ey);
+      g.lineTo(ex - Math.cos(ang - 0.35) * 14, ey - Math.sin(ang - 0.35) * 14);
+      g.lineTo(ex - Math.cos(ang + 0.35) * 14, ey - Math.sin(ang + 0.35) * 14);
+      g.closePath(); g.fillStyle = col; g.fill();
+      if (label) {
+        g.font = "500 12px 'IBM Plex Mono', monospace"; g.fillStyle = col;
+        g.fillText(label, ex + Math.cos(ang) * 14 - 6, ey + Math.sin(ang) * 14 + 4);
+      }
+    }
+
+    /* rotor body */
+    g.save();
+    g.translate(cx, cy); g.rotate(a - delta);
+    g.fillStyle = "rgba(62,224,189,.10)"; g.strokeStyle = "rgba(62,224,189,.55)"; g.lineWidth = 1.5;
+    g.beginPath();
+    g.ellipse(0, 0, R * 0.60, R * 0.28, 0, 0, Math.PI * 2);
+    g.fill(); g.stroke();
+    /* field winding hatch, density follows field current */
+    var n = Math.round(3 + i_f * 9);
+    g.strokeStyle = "rgba(62,224,189," + (0.25 + i_f * 0.5) + ")";
+    for (var j = 0; j < n; j++) {
+      var t = -R * 0.5 + (j / (n - 1)) * R;
+      g.beginPath(); g.moveTo(t, -R * 0.2); g.lineTo(t, R * 0.2); g.stroke();
+    }
+    g.restore();
+
+    vec(a, R * 0.92, "rgba(255,179,71,.95)", 2.4, "Bs");
+    vec(a - delta, R * 0.66, "rgba(62,224,189,.95)", 2.4, "Br");
+
+    /* load-angle arc */
+    g.strokeStyle = "rgba(255,255,255,.32)"; g.lineWidth = 1; g.setLineDash([3, 4]);
+    g.beginPath(); g.arc(cx, cy, R * 0.42, a - delta, a); g.stroke();
+    g.setLineDash([]);
+
+    /* readout panel */
+    var px = W * 0.72;
+    g.font = "500 12px 'IBM Plex Mono', monospace";
+    g.fillStyle = "rgba(133,152,160,1)";
+    var rows = [
+      ["EXCITATION f", f.toFixed(0) + " Hz"],
+      ["FIELD CURRENT", (i_f * 100).toFixed(0) + " %"],
+      ["LOAD ANGLE δ", (delta * 57.2958).toFixed(1) + "°"],
+      ["FIELD SPEED", (f * 60 / 2).toFixed(0) + " rpm"]
+    ];
+    rows.forEach(function (r, idx) {
+      var y = H * 0.26 + idx * 34;
+      g.fillStyle = "rgba(93,112,121,1)"; g.font = "500 10px 'IBM Plex Mono', monospace";
+      g.fillText(r[0], px, y);
+      g.fillStyle = "rgba(233,242,244,1)"; g.font = "500 15px 'IBM Plex Mono', monospace";
+      g.fillText(r[1], px, y + 18);
+      g.strokeStyle = "rgba(126,168,178,.14)"; g.lineWidth = 1;
+      g.beginPath(); g.moveTo(px, y + 26.5); g.lineTo(W - 20, y + 26.5); g.stroke();
+    });
+  }
+
+  function loop() {
+    a += (+freq.value / 60) * 0.045;
+    draw();
+    raf = requestAnimationFrame(loop);
+  }
+
+  [freq, ifld].forEach(function (el) { el.addEventListener("input", function () { if (reduced) draw(); }); });
+
+  if (reduced) { draw(); }
+  else {
+    raf = requestAnimationFrame(loop);
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && !live) { live = true; raf = requestAnimationFrame(loop); }
+          else if (!e.isIntersecting && live) { live = false; cancelAnimationFrame(raf); }
+        });
+      }, { threshold: 0 }).observe(c);
+    }
+  }
+})();
+</script>
+</body>
+</html>
