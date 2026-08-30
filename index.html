@@ -1,488 +1,846 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio for Shivam Gaind, a Columbia electrical engineering master's student and Penn State mechanical engineering graduate focused on robotics, optimization, and engineering applications."
-    />
-    <title>Shivam Gaind | Engineering Portfolio</title>
-    <script>
-      document.documentElement.classList.add("js");
-    </script>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Shivam Gaind home">
-        <span class="brand-mark">SG</span>
-        <span>Shivam Gaind</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shivam Gaind — Electrical Engineering, Robotics &amp; Power Electronics</title>
+<meta name="description" content="Shivam Gaind is an M.S. Electrical Engineering student at Columbia Engineering and a graduate researcher in the Motor Drives and Power Electronics Laboratory, working across motor drives, controls, robotics, computer vision, and embedded systems." />
+<meta name="author" content="Shivam Gaind" />
+<meta name="theme-color" content="#06080a" />
+<link rel="canonical" href="https://www.shivamgaind.com/" />
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-media" aria-hidden="true">
-          <img src="images/shivamphoto.jpg" alt="" />
-        </div>
-        <div class="hero-content reveal">
-          <p class="eyebrow">Electrical Engineering Master's | Mechanical Engineering B.S.</p>
-          <h1 id="hero-title">Shivam Gaind</h1>
-          <p class="hero-summary">
-            Columbia University master's student and Penn State mechanical engineering graduate building robotics, optimization, and real-world engineering tools.
-          </p>
-          <div class="hero-actions" aria-label="Portfolio actions">
-            <a class="button primary" href="pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3v10.3l3.7-3.7 1.4 1.4-6.1 6.1L4.9 11l1.4-1.4 3.7 3.7V3h2Zm-7 16h14v2H5v-2Z" />
-              </svg>
-              Resume
-            </a>
-            <a class="button secondary" href="#projects">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 5h16v4H4V5Zm0 6h7v8H4v-8Zm9 0h7v8h-7v-8Z" />
-              </svg>
-              Projects
-            </a>
-          </div>
-        </div>
-      </section>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.shivamgaind.com/" />
+<meta property="og:title" content="Shivam Gaind — Electrical Engineering, Robotics &amp; Power Electronics" />
+<meta property="og:description" content="Motor drives, power electronics, controls, robotics and computer vision — from Columbia's MPLab to a published iOS design tool." />
+<meta property="og:image" content="https://www.shivamgaind.com/media/img/insect-detection-1-1024.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
 
-      <section id="about" class="section about-section">
-        <div class="section-kicker">About</div>
-        <div class="about-grid reveal">
-          <h2>Engineering systems from concept to working hardware.</h2>
-          <p>
-            Hi, I'm Shivam Gaind - a mechanical engineer passionate about robotics, advanced manufacturing,
-            and designing systems that make real-world impact. I've worked across national laboratories,
-            defense engineering, clean energy design, and intelligent automation.
-          </p>
-        </div>
-      </section>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2306080a'/%3E%3Cpath d='M2 16c4 0 4-9 8-9s4 18 8 18 4-9 8-9 4 4 4 4' fill='none' stroke='%233ee0bd' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="/images/plateoptimize-icon.png" />
 
-      <section id="timeline" class="section timeline-section" aria-labelledby="timeline-title">
-        <div class="section-heading">
-          <div>
-            <div class="section-kicker">Timeline</div>
-            <h2 id="timeline-title">Education, work, and projects</h2>
-          </div>
-        </div>
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="/assets/instrument.css" />
 
-        <div class="timeline-layout">
-          <div class="timeline-column education-track">
-            <div class="timeline-track-title">Education</div>
-            <article class="timeline-card org-columbia" data-icon="CU">
-              <span class="timeline-date">Fall 2026 - Dec 2027</span>
-              <h3>M.S. in Electrical Engineering</h3>
-              <p>Robotics &amp; AI Engineering, Columbia University</p>
-            </article>
-            <article class="timeline-card org-psu" data-icon="PSU">
-              <span class="timeline-date">Aug 2022 - May 2026</span>
-              <h3>B.S. in Mechanical Engineering</h3>
-              <p>The Pennsylvania State University</p>
-            </article>
-          </div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shivam Gaind",
+  "url": "https://www.shivamgaind.com/",
+  "email": "mailto:Shivam.gaind@gmail.com",
+  "telephone": "+1-630-488-6598",
+  "jobTitle": "Graduate Researcher, Motor Drives and Power Electronics Laboratory",
+  "sameAs": ["https://www.linkedin.com/in/shivam-gaind/", "https://apps.apple.com/us/app/plateoptimize/id6760601892"],
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Columbia University" },
+    { "@type": "CollegeOrUniversity", "name": "The Pennsylvania State University" }
+  ],
+  "knowsAbout": ["Motor drives", "Power electronics", "Control systems", "Robotics", "Computer vision", "Embedded systems", "Topology optimization"]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="field" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
-          <div class="timeline-columns">
-            <div class="timeline-column internship-track">
-              <div class="timeline-track-title">Internships</div>
-              <a class="timeline-card org-northrop" data-icon="NG" href="#project-northrop">
-                <span class="timeline-date">May - Aug 2026</span>
-                <h3>Manufacturing Intern</h3>
-                <p>Northrop Grumman</p>
-              </a>
-              <a class="timeline-card org-northrop" data-icon="NG" href="#project-northrop">
-                <span class="timeline-date">May - Aug 2025</span>
-                <h3>Manufacturing Intern</h3>
-                <p>Northrop Grumman manufacturing engineering, tooling, and AR support</p>
-              </a>
-              <a class="timeline-card org-wabtec" data-icon="W" href="#project-formboard">
-                <span class="timeline-date">May - Aug 2024</span>
-                <h3>Mechanical Engineering Intern</h3>
-                <p>Wabtec / GE Transportation</p>
-              </a>
-              <a class="timeline-card org-doe" data-icon="DOE" href="#project-cooling-system">
-                <span class="timeline-date">Jun 2021 - Jun 2022</span>
-                <h3>Intern &amp; Research Assistant</h3>
-                <p>U.S. Department of Energy, Fermilab satellite cooling system</p>
-              </a>
-            </div>
+<header class="hdr">
+  <a class="brand" href="/" aria-label="Shivam Gaind — home">
+    <span class="brand-mark" aria-hidden="true">SG</span>
+    <span class="brand-name">Shivam Gaind</span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#index">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div style="display:flex;gap:.6rem;align-items:center">
+    <a class="hdr-cta" href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
 
-            <div class="timeline-column research-track">
-              <div class="timeline-track-title">Research</div>
-              <a class="timeline-card org-psu" data-icon="PSU" href="#project-research-optimization">
-                <span class="timeline-date">Jan - May 2026</span>
-                <h3>Research Assistant</h3>
-                <p>Penn State CEARL: thermal, mechanical, fluid, and electromagnetic optimization</p>
-              </a>
-              <a class="timeline-card org-psu" data-icon="PSU" href="#project-defect-detection">
-                <span class="timeline-date">Aug 2023 - May 2024</span>
-                <h3>Research Assistant</h3>
-                <p>Penn State Applied Research Laboratory defect-detection algorithms</p>
-              </a>
-              <article class="timeline-card org-mentor" data-icon="MEN">
-                <span class="timeline-date">Sept 2024 - May 2025</span>
-                <h3>Engineering Mentor</h3>
-                <p>Guided a St. Charles, IL student team through design reviews for gutter downspout repair solutions</p>
-              </article>
-            </div>
+<nav class="drawer" id="drawer" aria-label="Mobile">
+  <a href="#work">Work <span>01</span></a>
+  <a href="#experience">Experience <span>02</span></a>
+  <a href="#timeline">Timeline <span>03</span></a>
+  <a href="#index">Projects <span>04</span></a>
+  <a href="#contact">Contact <span>05</span></a>
+  <a href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">Résumé <span>PDF</span></a>
+</nav>
 
-            <div class="timeline-column projects-track">
-              <div class="timeline-track-title">Projects</div>
-              <a class="timeline-card org-psu" data-icon="PSU" href="#project-insect-detection">
-                <span class="timeline-date">Jan - May 2026</span>
-                <h3>AI-Based Insect Detection System</h3>
-                <p>Capstone project using YOLOv8, Grad-CAM, ESP32 lighting, and Jetson Nano processing</p>
-              </a>
-              <a class="timeline-card org-app" data-icon="APP" href="#project-plateoptimize">
-                <span class="timeline-date">Mar 2026</span>
-                <h3>PlateOptimize iOS App</h3>
-                <p>Published app for topology-optimized base plate design and CAD export</p>
-              </a>
-              <a class="timeline-card org-robotics" data-icon="BOT" href="#project-puzzle">
-                <span class="timeline-date">Dec 2025</span>
-                <h3>Puzzle Sorting Robot</h3>
-                <p>Vision robotics system for sorting puzzle pieces by edge status and color</p>
-              </a>
-              <a class="timeline-card org-robotics" data-icon="BOT" href="#project-automata">
-                <span class="timeline-date">Nov 2025</span>
-                <h3>Mechanical Automata Exhibit</h3>
-                <p>Children's Museum mechanism project for teaching motion and linkages</p>
-              </a>
-              <a class="timeline-card org-software" data-icon="AI" href="#project-ai-chatbot">
-                <span class="timeline-date">Nov 2025</span>
-                <h3>AI Chatbot for Medical Clinics</h3>
-                <p>React and Node.js intake tool connected to the OpenAI API</p>
-              </a>
-              <a class="timeline-card org-robotics" data-icon="BOT" href="#project-wall-robot">
-                <span class="timeline-date">Mar 2025</span>
-                <h3>Infrared Wall-Following Robot</h3>
-                <p>Controls project using IR sensing and proportional control</p>
-              </a>
-              <a class="timeline-card org-psu" data-icon="PSU" href="#project-clean-energy">
-                <span class="timeline-date">Sept 2024 - May 2025</span>
-                <h3>Columbia 100K Strong in the Americas Program</h3>
-                <p>Designed and presented an off-grid energy and water system for rural Colombia</p>
-              </a>
-              <a class="timeline-card org-wabtec" data-icon="W" href="#project-formboard">
-                <span class="timeline-date">Jul 2024</span>
-                <h3>Formboard Wiring</h3>
-                <p>Wabtec wire-harnessing process improvement using stencils</p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+<nav class="rail" aria-label="Section">
+  <a href="#top"><span class="lbl">Top</span><i class="tick"></i></a>
+  <a href="#focus"><span class="lbl">Focus</span><i class="tick"></i></a>
+  <a href="#work"><span class="lbl">Work</span><i class="tick"></i></a>
+  <a href="#experience"><span class="lbl">Experience</span><i class="tick"></i></a>
+  <a href="#timeline"><span class="lbl">Timeline</span><i class="tick"></i></a>
+  <a href="#index"><span class="lbl">Projects</span><i class="tick"></i></a>
+  <a href="#contact"><span class="lbl">Contact</span><i class="tick"></i></a>
+</nav>
 
-      <section id="projects" class="section projects-section" aria-labelledby="projects-title">
-        <div class="section-heading">
-          <div>
-            <div class="section-kicker">Projects</div>
-            <h2 id="projects-title">Selected work</h2>
-          </div>
-          <div class="filter-tabs" role="tablist" aria-label="Filter projects">
-            <button class="filter-tab active" type="button" data-filter="all" aria-pressed="true">All</button>
-            <button class="filter-tab" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
-            <button class="filter-tab" type="button" data-filter="robotics" aria-pressed="false">Robotics</button>
-            <button class="filter-tab" type="button" data-filter="software" aria-pressed="false">Software</button>
-          </div>
-        </div>
+<main id="main">
 
-        <p class="projects-intro">
-          Featured work spans a published iOS/Mac app, Penn State optimization research, and an AI-based insect detection capstone.
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="scope" aria-hidden="true"><canvas></canvas></div>
+  <div class="wrap hero-inner">
+    <div class="hero-grid">
+      <div>
+        <p class="role">
+          <span>Electrical Engineering</span><span class="sep">/</span>
+          <span>Robotics &amp; AI</span><span class="sep">/</span>
+          <span>Controls</span><span class="sep">/</span>
+          <span>Power Electronics</span>
         </p>
-
-        <div class="project-grid">
-          <div class="project-group-heading" data-group="featured">
-            <span>Featured Projects</span>
-          </div>
-
-          <article id="project-plateoptimize" class="project-card reveal featured app-project" data-category="engineering software" data-group="featured">
-            <div class="project-ribbon">Featured iOS and Mac App</div>
-            <div class="project-image app-preview">
-              <div class="developer-shot" aria-label="PlateOptimize App Store listing showing SHIVAM GAIND as the developer">
-                <div class="listing-top">
-                  <img src="images/plateoptimize-icon.png" alt="PlateOptimize app icon" />
-                  <div class="listing-copy">
-                    <strong>PlateOptimize</strong>
-                    <span>Productivity</span>
-                    <em>Designed for iPad. Not verified for macOS.</em>
-                    <a href="https://apps.apple.com/us/app/plateoptimize/id6760601892" target="_blank" rel="noopener">Open</a>
-                  </div>
-                </div>
-                <div class="listing-meta">
-                  <div><span>Age Rating</span><strong>4+</strong><small>Years</small></div>
-                  <div><span>Category</span><strong>Productivity</strong></div>
-                  <div><span>Developer</span><strong>SHIVAM GAIND</strong></div>
-                </div>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-type">Published iOS, iPadOS, and Mac application</p>
-              <div class="app-title-row">
-                <img src="images/plateoptimize-icon.png" alt="PlateOptimize app icon" />
-                <h3>PlateOptimize iOS App</h3>
-              </div>
-              <a class="project-download-top" href="https://apps.apple.com/us/app/plateoptimize/id6760601892" target="_blank" rel="noopener">
-                App Store: apps.apple.com/us/app/plateoptimize/id6760601892
-              </a>
-              <p>
-                I also built a web version you can run here:
-                <a class="text-link" href="https://baseplateoptimizer.streamlit.app/" target="_blank" rel="noopener">baseplateoptimizer.streamlit.app</a>
-              </p>
-              <p class="project-callout">
-                Created and published PlateOptimize, a downloadable application for designing optimized metal base plates.
-              </p>
-              <ul class="project-quick-list">
-                <li>Built the workflow from engineering inputs to optimized CAD-ready geometry.</li>
-                <li>Supports plate dimensions, bolt layout, column geometry, and loading conditions.</li>
-                <li>Exports DXF, SVG, and PNG files for manufacturing workflows.</li>
-              </ul>
-              <div class="project-tags" aria-label="Project highlights">
-                <span>iPhone</span>
-                <span>iPad</span>
-                <span>Mac</span>
-                <span>CAD export</span>
-                <span>Published app</span>
-              </div>
-              <div class="project-links">
-                <a class="project-button app-store-link" href="https://apps.apple.com/us/app/plateoptimize/id6760601892" target="_blank" rel="noopener">Download PlateOptimize</a>
-                <a class="project-button" href="https://baseplateoptimizer.streamlit.app/" target="_blank" rel="noopener">Try Live Tool</a>
-                <a class="project-button" href="https://www.youtube.com/watch?v=2720H-RFmLs" target="_blank" rel="noopener">Watch Demo Video</a>
-              </div>
-            </div>
-          </article>
-
-          <article id="project-research-optimization" class="project-card reveal featured research-project" data-category="engineering software" data-group="featured">
-            <div class="project-image">
-              <img src="images/optimization-techniques-title.png" alt="Optimization Techniques title slide by Shivam Gaind" />
-            </div>
-            <div class="project-body">
-              <p class="project-type">Research Assistant | Penn State Computational Electromagnetics and Antennas Research Laboratory</p>
-              <h3>Thermal and Multiphysics Topology Optimization</h3>
-              <p class="project-callout">
-                Extended topology optimization methods to thermal systems by minimizing thermal compliance and improving heat transfer.
-              </p>
-              <ul class="project-quick-list">
-                <li>Combined thermal, mechanical, fluid, and electromagnetic objectives in a multiphysics framework.</li>
-                <li>Studied GRIN lens designs that balance electromagnetic gain with structural loading requirements.</li>
-                <li>Built an interactive tool to visualize optimization results and connect the research to engineering decisions.</li>
-              </ul>
-              <div class="project-tags" aria-label="Project highlights">
-                <span>Thermal systems</span>
-                <span>Multiphysics</span>
-                <span>GRIN lenses</span>
-                <span>Electromagnetic gain</span>
-                <span>Topology optimization</span>
-                <span>AWS</span>
-              </div>
-              <div class="project-links">
-                <a class="project-button slides-link" href="files/optimization-project-slides.pptx" target="_blank" rel="noopener">View Slides</a>
-              </div>
-            </div>
-          </article>
-
-          <article id="project-insect-detection" class="project-card reveal featured insect-project" data-category="engineering software robotics" data-group="featured">
-            <div class="project-image insect-gallery">
-              <img class="insect-hero-image" src="images/insect-detection-1.png" alt="Malaise trap inspired insect detection system deployed outdoors" />
-              <img src="images/insect-detection-2.png" alt="Electronics and LED panel inside the insect detection enclosure" />
-              <img src="images/insect-detection-3.png" alt="Camera and Jetson Nano enclosure for insect imaging" />
-              <img src="images/insect-detection-4.png" alt="Capstone insect detection system prototype with photo chamber" />
-              <video class="insect-video" src="videos/bee-entering-trap.mov" controls muted preload="metadata" aria-label="Video showing a bee entering the insect trap"></video>
-            </div>
-            <div class="project-body">
-              <p class="project-type">Capstone Project</p>
-              <h3>AI-Based Insect Detection System</h3>
-              <p class="project-callout">
-                Built an insect detection device inspired by a Malaise trap, using controlled lighting, edge computing, and YOLOv8 models for insect classification.
-              </p>
-              <ul class="project-quick-list">
-                <li>Designed a trap workflow where insects enter a photo chamber for automated imaging.</li>
-                <li>Used ESP32-controlled LED panels, Jetson Nano processing, and two YOLOv8 classifiers.</li>
-                <li>Validated model focus with Grad-CAM heatmaps and confidence-score outputs.</li>
-                <li>Research is in progress toward an official publication, with demos presented to engineering leadership at Penn State and Ohio State.</li>
-              </ul>
-              <div class="project-tags" aria-label="Project highlights">
-                <span>YOLOv8</span>
-                <span>Jetson Nano</span>
-                <span>ESP32</span>
-                <span>Grad-CAM</span>
-                <span>Publication in progress</span>
-                <span>Computer vision</span>
-              </div>
-            </div>
-          </article>
-
-          <div class="project-group-heading" data-group="experience">
-            <span>Professional & Research Experience</span>
-          </div>
-
-          <article id="project-northrop" class="project-card reveal" data-category="engineering" data-group="experience">
-            <div class="project-image logo-image">
-              <img src="images/Northrop-Grumman-logo.png" alt="Northrop Grumman logo" />
-            </div>
-            <div class="project-body">
-              <p class="project-type">Manufacturing engineering internship</p>
-              <h3>Northrop Grumman Manufacturing Engineering Intern</h3>
-              <ul>
-                <li>Designed an 80 lb radio antenna stand allowing secure mounting and 45-degree rotation in both directions while maintaining full stability.</li>
-                <li>Developed a full tool-tracking database enabling technicians to add tools, check them out, return them, and update sharpening or decommissioning status.</li>
-                <li>Supported the Shop Floor Augmented Reality project through hardware testing and creating detailed procedures that guided technicians through assembly tasks.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article id="project-cooling-system" class="project-card reveal" data-category="engineering" data-group="experience">
-            <div class="project-image">
-              <img src="images/cooling-system.jpg" alt="Cooling system hardware" />
-            </div>
-            <div class="project-body">
-              <p class="project-type">Thermal design</p>
-              <h3>Digital Satellite Cooling System - Fermilab</h3>
-              <p>Designed a thermal system to transfer heat from key satellite circuits to a radiator for space-based detectors.</p>
-              <a class="text-link" href="pdfs/cooling-system.pdf" target="_blank" rel="noopener">View PDF</a>
-            </div>
-          </article>
-
-          <article id="project-defect-detection" class="project-card reveal" data-category="software engineering" data-group="experience">
-            <div class="project-image logo-image">
-              <img src="images/arl.png" alt="Army Research Laboratory logo" />
-            </div>
-            <div class="project-body">
-              <p class="project-type">Additive manufacturing</p>
-              <h3>Defect-Detection Algorithm - ARL</h3>
-              <p>Developed sampling-based algorithms to detect and quantify defects in metal AM builds.</p>
-              <a class="text-link" href="pdfs/defect-detection.pdf" target="_blank" rel="noopener">View PDF</a>
-            </div>
-          </article>
-
-          <article id="project-formboard" class="project-card reveal" data-category="engineering" data-group="experience">
-            <div class="project-image">
-              <img src="images/formboard.jpg" alt="Wabtec formboard wiring" />
-            </div>
-            <div class="project-body">
-              <p class="project-type">Manufacturing process</p>
-              <h3>Formboard Wiring - Wabtec</h3>
-              <p>Developed a new wire-harnessing method replacing traditional formboards with stencils.</p>
-              <a class="text-link" href="pdfs/wabtec-wiring.pdf" target="_blank" rel="noopener">View PDF</a>
-            </div>
-          </article>
-
-          <div class="project-group-heading" data-group="projects">
-            <span>Additional Projects</span>
-          </div>
-
-          <article id="project-ai-chatbot" class="project-card reveal" data-category="software" data-group="projects">
-            <div class="project-image">
-              <img src="images/ai-chatbot.jpg" alt="AI chatbot interface concept" />
-            </div>
-            <div class="project-body">
-              <p class="project-type">AI application</p>
-              <h3>AI Chatbot for Medical Clinics</h3>
-              <p>Built a React and Node.js intake tool that asks guided symptom follow-up questions and organizes patient responses for doctors.</p>
-            </div>
-          </article>
-
-          <article id="project-wall-robot" class="project-card reveal" data-category="robotics" data-group="projects">
-            <div class="project-image">
-              <img src="images/wall-robot.jpg" alt="Infrared wall-following robot" />
-            </div>
-            <div class="project-body">
-              <p class="project-type">Controls</p>
-              <h3>Infrared Wall-Following Robot</h3>
-              <p>Implemented a proportional controller using IR sensing to maintain distance from walls.</p>
-              <a class="text-link" href="pdfs/wall-following-robot.pdf" target="_blank" rel="noopener">View PDF</a>
-            </div>
-          </article>
-
-          <article id="project-automata" class="project-card reveal" data-category="engineering" data-group="projects">
-            <div class="project-image">
-              <img src="images/automata.jpg" alt="Mechanical automata exhibit" />
-            </div>
-            <div class="project-body">
-              <p class="project-type">Mechanisms</p>
-              <h3>Mechanical Automata Exhibit - Children's Museum</h3>
-              <p>Designed an interactive mechanical automaton exhibit to teach motion and linkages.</p>
-              <a class="text-link" href="https://youtu.be/jIx4o_umv-I" target="_blank" rel="noopener">Watch Demo Video</a>
-            </div>
-          </article>
-
-          <article id="project-clean-energy" class="project-card reveal" data-category="engineering" data-group="projects">
-            <div class="project-image">
-              <img src="images/clean-energy.jpg" alt="Clean energy system concept" />
-            </div>
-            <div class="project-body">
-              <p class="project-type">Sustainable energy</p>
-              <h3>Clean Energy System - Colombia</h3>
-              <p>Designed and presented an off-grid energy and water system for a rural Colombian village.</p>
-              <a class="text-link" href="pdfs/colombia-energy.pdf" target="_blank" rel="noopener">View PDF</a>
-            </div>
-          </article>
-
-          <article id="project-puzzle" class="project-card reveal" data-category="robotics software" data-group="projects">
-            <div class="project-image">
-              <img src="images/puzzle.jpg" alt="Puzzle sorting robot setup" />
-            </div>
-            <div class="project-body">
-              <p class="project-type">Vision robotics</p>
-              <h3>Puzzle Sorting Robot</h3>
-              <p>Built a Dobot Vision Studio and C# robot workflow that classifies puzzle pieces by edge status and color, then sorts them into organized stacks.</p>
-              <a class="text-link" href="https://youtu.be/s-5QHAK5rCs" target="_blank" rel="noopener">Watch Demo Video</a>
-            </div>
-          </article>
+        <h1>
+          <span class="ln"><span>Shivam</span></span>
+          <span class="ln"><span>Gaind</span></span>
+        </h1>
+        <p class="blurb">
+          M.S. Electrical Engineering at <strong>Columbia Engineering</strong> and graduate researcher in the
+          <strong>Motor Drives &amp; Power Electronics Laboratory</strong>. I build intelligent systems where the
+          control loop, the power stage, and the hardware all have to work — machine testing and drives,
+          vision and edge AI, optimization, and embedded electromechanical design.
+        </p>
+        <div class="hero-actions">
+          <a class="btn solid" href="#work"><span>Selected work</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2L11.6 6.4 13 5z"/></svg>
+          </a>
+          <a class="btn" href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener"><span>Résumé (PDF)</span></a>
         </div>
-      </section>
+        <p class="scroll-cue"><i></i> Scroll to acquire</p>
+      </div>
 
-      <section id="contact" class="section contact-section">
-        <div class="contact-panel reveal">
-          <div>
-            <div class="section-kicker">Contact</div>
-            <h2>Open to engineering, robotics, and product-build conversations.</h2>
-            <div class="contact-list" aria-label="Contact information">
-              <a href="mailto:Shivam.gaind@gmail.com">
-                <span>Email</span>
-                Shivam.gaind@gmail.com
-              </a>
-              <a href="tel:+16304886598">
-                <span>Phone</span>
-                630-488-6598
-              </a>
-              <a href="https://www.linkedin.com/in/shivam-gaind/" target="_blank" rel="noopener">
-                <span>LinkedIn</span>
-                linkedin.com/in/shivam-gaind
-              </a>
-            </div>
+      <aside class="readout" aria-label="Current status">
+        <div class="rw"><span class="k">Channel</span><b>Now</b></div>
+        <div class="rw"><span class="k">Position</span><b>Grad Researcher</b></div>
+        <div class="rw"><span class="k">Lab</span><b>MPLab, Columbia</b></div>
+        <div class="rw"><span class="k">Subject</span><b>WRSM testing</b></div>
+        <div class="rw"><span class="k">Toolchain</span><b>MATLAB / Simulink</b></div>
+        <div class="rw"><span class="k">Status</span><span class="live">Acquiring</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOCUS ============ -->
+<section class="section" id="focus">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">01 — Focus</p>
+      <h2>Six domains, one habit: close the loop on real hardware.</h2>
+      <p class="lede">
+        My work sits where power, control, and computation meet. Each of these areas is backed by
+        research, an internship, or a shipped system further down this page — not a course list.
+      </p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="caps rv" data-d="1">
+      <article class="cap">
+        <p class="n">01</p><h3>Motor Drives &amp; Power Electronics</h3>
+        <p>Wound-rotor synchronous machine testing, drive-side instrumentation, and experimental validation against models at Columbia's MPLab.</p>
+        <p class="tags"><span>Electric machines</span><span>Converters</span><span>DAQ</span><span>Simulink</span></p>
+      </article>
+      <article class="cap">
+        <p class="n">02</p><h3>Controls</h3>
+        <p>Proportional control tuned on hardware, sensor placement studies, and closed-loop behaviour verified against measured response rather than simulation alone.</p>
+        <p class="tags"><span>Feedback</span><span>Gain tuning</span><span>Sensing</span></p>
+      </article>
+      <article class="cap">
+        <p class="n">03</p><h3>Robotics &amp; Vision</h3>
+        <p>Machine-vision sorting cells, IR-guided mobile robots, and a field-deployed imaging trap running YOLOv8 classifiers on edge hardware.</p>
+        <p class="tags"><span>YOLOv8</span><span>Grad-CAM</span><span>Dobot</span><span>C#</span></p>
+      </article>
+      <article class="cap">
+        <p class="n">04</p><h3>Optimization</h3>
+        <p>Adjoint-based electromagnetic optimization and SIMP topology optimization across coupled EM, thermal, and mechanical objectives.</p>
+        <p class="tags"><span>Adjoint</span><span>SIMP</span><span>COMSOL</span><span>MATLAB</span></p>
+      </article>
+      <article class="cap">
+        <p class="n">05</p><h3>Embedded Systems</h3>
+        <p>ESP32-driven lighting, microcontroller robotics, timed edge-compute enclosures, and the wiring and power that keep them alive outdoors.</p>
+        <p class="tags"><span>ESP32</span><span>Edge compute</span><span>Sensors</span></p>
+      </article>
+      <article class="cap">
+        <p class="n">06</p><h3>Advanced Engineering &amp; Manufacturing</h3>
+        <p>Defense tooling and AR-assisted assembly at Northrop Grumman, satellite thermal design at Fermilab, and harness-process work at Wabtec.</p>
+        <p class="tags"><span>Tooling</span><span>Thermal</span><span>Process design</span><span>NDE</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLAGSHIP WORK ============ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">02 — Selected work</p>
+      <h2>Four projects worth reading in full.</h2>
+      <p class="lede">
+        Current research, a published application, a field-deployed AI instrument, and a multiphysics
+        optimization study. Each one opens into a full case study.
+      </p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="flagships">
+
+      <!-- 01 MPLab -->
+      <article class="flag rv">
+        <div class="flag-media schematic" aria-hidden="true">
+          <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+          <svg viewBox="0 0 640 480" preserveAspectRatio="xMidYMid meet" role="img" style="width:100%;height:100%;padding:8%;background:linear-gradient(180deg,#0d1317,#070a0c)">
+            <g class="dg">
+              <!-- grid -->
+              <defs>
+                <pattern id="mg" width="32" height="32" patternUnits="userSpaceOnUse">
+                  <path d="M32 0H0v32" fill="none" stroke="rgba(126,168,178,.10)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect x="0" y="0" width="640" height="480" fill="url(#mg)"/>
+              <!-- source -->
+              <rect class="dg-box" x="12" y="80" width="112" height="62" rx="2"/>
+              <text class="dg-title" x="68" y="106" text-anchor="middle">DC Supply</text>
+              <text class="dg-label" x="68" y="124" text-anchor="middle">Bus</text>
+              <!-- converter -->
+              <rect class="dg-box hi" x="176" y="80" width="122" height="62" rx="2"/>
+              <text class="dg-title" x="237" y="106" text-anchor="middle">Inverter</text>
+              <text class="dg-label" x="237" y="124" text-anchor="middle">3-phase bridge</text>
+              <!-- machine -->
+              <circle class="dg-box hi" cx="430" cy="111" r="46"/>
+              <text class="dg-title" x="430" y="107" text-anchor="middle">WRSM</text>
+              <text class="dg-label" x="430" y="124" text-anchor="middle">wound rotor</text>
+              <!-- load -->
+              <rect class="dg-box" x="530" y="80" width="96" height="62" rx="2"/>
+              <text class="dg-title" x="578" y="106" text-anchor="middle">Load</text>
+              <text class="dg-label" x="578" y="124" text-anchor="middle">dyno</text>
+              <!-- power path -->
+              <path class="dg-wire" d="M124 111h52M298 111h86M476 111h54"/>
+              <path class="dg-flow" d="M124 111h52M298 111h86M476 111h54"/>
+              <!-- sensing -->
+              <rect class="dg-box" x="176" y="266" width="122" height="62" rx="2"/>
+              <text class="dg-title" x="237" y="292" text-anchor="middle">DAQ</text>
+              <text class="dg-label" x="237" y="310" text-anchor="middle">v, i, θ, ω</text>
+              <rect class="dg-box hi" x="372" y="266" width="140" height="62" rx="2"/>
+              <text class="dg-title" x="442" y="292" text-anchor="middle">Simulink Model</text>
+              <text class="dg-label" x="442" y="310" text-anchor="middle">compare / validate</text>
+              <rect class="dg-box" x="176" y="392" width="336" height="56" rx="2"/>
+              <text class="dg-title" x="344" y="418" text-anchor="middle">Control &amp; Test Plan</text>
+              <text class="dg-label" x="344" y="436" text-anchor="middle">excitation · operating points · logging</text>
+              <!-- sense wires -->
+              <path class="dg-wire" d="M430 157v58M430 215H237v51M298 297h74"/>
+              <path class="dg-flow" d="M430 157v58M430 215H237v51M298 297h74" style="animation-delay:.5s"/>
+              <path class="dg-wire" d="M442 328v34H344v30M237 328v34"/>
+              <path class="dg-wire" d="M237 392V360"/>
+              <path class="dg-wire" d="M110 420H176M110 420V111h14" stroke-dasharray="3 5"/>
+              <text class="dg-cap" x="16" y="240" transform="rotate(-90 16 240)">closed loop</text>
+              <text class="dg-cap" x="536" y="200">measurement path</text>
+            </g>
+          </svg>
+          <span class="stamp">Test bench · block diagram</span>
+        </div>
+        <div class="flag-body">
+          <p class="flag-idx">01 / Current research</p>
+          <p class="flag-role">Motor Drives &amp; Power Electronics Laboratory · Columbia University</p>
+          <h3><a href="/work/mplab/">Wound-Rotor Synchronous Machine Testing</a></h3>
+          <p>
+            Graduate research on electric machines and drives: instrumenting a wound-rotor synchronous machine,
+            running it through defined operating points, and validating measured behaviour against MATLAB/Simulink
+            models. The work sits across the power stage, the sensing chain, and the control side at once.
+          </p>
+          <div class="spec">
+            <div><span class="k">Role</span><span class="v">Graduate Researcher</span></div>
+            <div><span class="k">Period</span><span class="v">Fall 2026 — Present</span></div>
+            <div><span class="k">Focus</span><span class="v">Machines · drives · experimental validation</span></div>
+            <div><span class="k">Tooling</span><span class="v">MATLAB / Simulink · DAQ</span></div>
           </div>
-          <div class="contact-actions">
-            <a class="button primary" href="pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3v10.3l3.7-3.7 1.4 1.4-6.1 6.1L4.9 11l1.4-1.4 3.7 3.7V3h2Zm-7 16h14v2H5v-2Z" />
-              </svg>
-              Resume
-            </a>
-            <a class="button secondary" href="https://www.linkedin.com/in/shivam-gaind/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5.3 8.9h3.2V19H5.3V8.9Zm1.6-5A1.8 1.8 0 1 1 7 7.5a1.8 1.8 0 0 1-.1-3.6ZM10.4 8.9h3.1v1.4h.1a3.4 3.4 0 0 1 3.1-1.7c3.3 0 3.9 2.2 3.9 5V19h-3.2v-4.8c0-1.1 0-2.6-1.6-2.6s-1.8 1.2-1.8 2.5V19h-3.2V8.9Z" />
-              </svg>
-              LinkedIn
-            </a>
+          <div class="chips">
+            <span class="hot">Current</span><span>Electric machines</span><span>Motor drives</span>
+            <span>Power electronics</span><span>Controls</span><span>Data acquisition</span>
+          </div>
+          <div class="flag-links">
+            <a class="btn" href="/work/mplab/"><span>Read case study</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2L11.6 6.4 13 5z"/></svg></a>
           </div>
         </div>
-      </section>
-    </main>
+      </article>
 
-    <footer class="site-footer">
-      <p>Shivam Gaind</p>
-      <a href="#top">Back to top</a>
-    </footer>
+      <!-- 02 PlateOptimize -->
+      <article class="flag rev rv">
+        <div class="flag-media">
+          <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+          <picture>
+            <source type="image/webp" srcset="/media/img/plateoptimize-app-store-640.webp 640w, /media/img/plateoptimize-app-store-1024.webp 1024w" sizes="(min-width:940px) 44vw, 92vw" />
+            <img src="/media/img/plateoptimize-app-store-1024.jpg" width="1200" height="630" loading="lazy" decoding="async" alt="PlateOptimize App Store listing artwork" />
+          </picture>
+          <span class="stamp">Published · App Store</span>
+        </div>
+        <div class="flag-body">
+          <p class="flag-idx">02 / Shipped product</p>
+          <p class="flag-role">iOS · iPadOS · macOS · Web</p>
+          <h3><a href="/work/plateoptimize/">PlateOptimize</a></h3>
+          <p>
+            A design tool for optimized metal base plates, published on the App Store and mirrored as a web app.
+            You give it plate dimensions, bolt layout, column geometry and loading conditions; it returns
+            CAD-ready geometry and exports DXF, SVG and PNG straight into a manufacturing workflow.
+          </p>
+          <div class="spec">
+            <div><span class="k">Role</span><span class="v">Sole developer &amp; publisher</span></div>
+            <div><span class="k">Released</span><span class="v">March 2026</span></div>
+            <div><span class="k">Category</span><span class="v">Productivity · Age rating 4+</span></div>
+            <div><span class="k">Exports</span><span class="v">DXF · SVG · PNG</span></div>
+          </div>
+          <div class="chips">
+            <span class="hot">Live on App Store</span><span>Optimization</span><span>CAD export</span>
+            <span>Streamlit</span><span>Design automation</span>
+          </div>
+          <div class="flag-links">
+            <a class="btn solid" href="https://apps.apple.com/us/app/plateoptimize/id6760601892" target="_blank" rel="noopener"><span>App Store</span></a>
+            <a class="btn" href="https://baseplateoptimizer.streamlit.app/" target="_blank" rel="noopener"><span>Live web tool</span></a>
+            <a class="btn ghost" href="/work/plateoptimize/"><span>Case study</span></a>
+          </div>
+        </div>
+      </article>
 
-    <script src="script.js"></script>
-  </body>
+      <!-- 03 Insect detection -->
+      <article class="flag rv">
+        <div class="flag-media">
+          <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+          <picture>
+            <source type="image/webp" srcset="/media/img/insect-detection-1-640.webp 640w, /media/img/insect-detection-1-1024.webp 1024w, /media/img/insect-detection-1-1600.webp 1600w" sizes="(min-width:940px) 44vw, 92vw" />
+            <img src="/media/img/insect-detection-1-1600.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Malaise-style insect trap deployed on a lawn, with mesh wings funnelling insects toward a backlit imaging panel" />
+          </picture>
+          <span class="stamp">Field deployment · Penn State</span>
+        </div>
+        <div class="flag-body">
+          <p class="flag-idx">03 / Capstone instrument</p>
+          <p class="flag-role">Capstone · Computer vision · Edge AI</p>
+          <h3><a href="/work/insect-detection/">AI-Based Insect Detection System</a></h3>
+          <p>
+            A Malaise-trap-inspired instrument that photographs insects instead of killing them. Mesh wings funnel
+            flying insects into a photo chamber lit by ESP32-controlled LED panels; two YOLOv8 classifiers run on
+            edge compute, and Grad-CAM heat maps confirm the models are looking at the insect and not the background.
+          </p>
+          <div class="spec">
+            <div><span class="k">Role</span><span class="v">Capstone team</span></div>
+            <div><span class="k">Period</span><span class="v">Jan — May 2026</span></div>
+            <div><span class="k">Pipeline</span><span class="v">Trap → chamber → imaging → YOLOv8 ×2</span></div>
+            <div><span class="k">Status</span><span class="v">Publication in progress</span></div>
+          </div>
+          <div class="chips">
+            <span class="hot">Publication in progress</span><span>YOLOv8</span><span>Jetson Nano</span>
+            <span>ESP32</span><span>Grad-CAM</span><span>Computer vision</span>
+          </div>
+          <div class="flag-links">
+            <a class="btn" href="/work/insect-detection/"><span>Read case study</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2L11.6 6.4 13 5z"/></svg></a>
+            <a class="btn ghost" href="/work/insect-detection/#field-video"><span>Watch trap footage</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 Topology optimization -->
+      <article class="flag rev rv">
+        <div class="flag-media">
+          <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+          <picture>
+            <source type="image/webp" srcset="/media/img/optimization-techniques-title-640.webp 640w, /media/img/optimization-techniques-title-1024.webp 1024w, /media/img/optimization-techniques-title-1600.webp 1600w" sizes="(min-width:940px) 44vw, 92vw" />
+            <img src="/media/img/optimization-techniques-title-1600.jpg" width="1728" height="975" loading="lazy" decoding="async" alt="Title slide reading Optimization Techniques, Shivam Gaind, Penn State Applied Research Laboratory" />
+          </picture>
+          <span class="stamp">25-slide deck · viewable inline</span>
+        </div>
+        <div class="flag-body">
+          <p class="flag-idx">04 / Research</p>
+          <p class="flag-role">Research Assistant · Penn State Computational Electromagnetics and Antennas Research Laboratory</p>
+          <h3><a href="/work/topology-optimization/">Multiphysics &amp; Topology Optimization</a></h3>
+          <p>
+            A study of how adjoint-sensitivity electromagnetic optimization and SIMP topology optimization combine
+            into a single multiphysics loop — designing GRIN lenses and meta-radomes that have to raise antenna
+            gain and survive mechanical load at the same time.
+          </p>
+          <div class="spec">
+            <div><span class="k">Role</span><span class="v">Research Assistant</span></div>
+            <div><span class="k">Period</span><span class="v">Jan — May 2026</span></div>
+            <div><span class="k">Methods</span><span class="v">Adjoint sensitivity · SIMP · FEA</span></div>
+            <div><span class="k">Stack</span><span class="v">COMSOL · MATLAB · AWS</span></div>
+          </div>
+          <div class="chips">
+            <span>Topology optimization</span><span>Electromagnetics</span><span>GRIN lenses</span>
+            <span>Meta-radomes</span><span>Thermal</span><span>AWS</span>
+          </div>
+          <div class="flag-links">
+            <a class="btn" href="/work/topology-optimization/"><span>Read case study</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2L11.6 6.4 13 5z"/></svg></a>
+            <a class="btn ghost" href="/work/topology-optimization/#deck"><span>Browse 25 slides</span></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">03 — Industry &amp; national labs</p>
+      <h2>Where the work was done for someone else's schedule.</h2>
+      <p class="lede">
+        Defense manufacturing, a Department of Energy national laboratory, rail traction systems, and an
+        applied research laboratory. Every entry links to the original documentation.
+      </p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="tier2 rv" data-d="1">
+      <article class="xp">
+        <div class="xp-top">
+          <span class="logo-chip"><img src="/images/Northrop-Grumman-logo.png" alt="Northrop Grumman" width="160" height="90" loading="lazy" decoding="async" /></span>
+          <span class="when">Summer 2025 &amp; 2026</span>
+        </div>
+        <p class="org">Manufacturing Engineering Intern</p>
+        <h3>Northrop Grumman</h3>
+        <ul>
+          <li>Designed an 80&nbsp;lb radio antenna stand allowing secure mounting and 45° rotation in both directions while maintaining full stability.</li>
+          <li>Developed a tool-tracking database letting technicians add, check out, return, and update sharpening or decommissioning status for tooling.</li>
+          <li>Supported the Shop Floor Augmented Reality project through hardware testing and detailed procedures guiding technicians through assembly.</li>
+        </ul>
+      </article>
+
+      <article class="xp">
+        <div class="xp-top">
+          <span class="logo-chip"><img src="/images/logo-fermilab.svg" alt="Fermilab" width="120" height="40" loading="lazy" decoding="async" /></span>
+          <span class="when">Jun 2021 — Jun 2022</span>
+        </div>
+        <p class="org">U.S. Department of Energy · Fermilab</p>
+        <h3>Satellite Readout-Board Cooling System</h3>
+        <ul>
+          <li>Designed a thermal path carrying roughly 10&nbsp;W away from the three CCD read-out boards of a dark-matter X-ray detection satellite.</li>
+          <li>Worked the problem for vacuum: with no air, conduction and radiation to the radiator are the only mechanisms available.</li>
+          <li>Presented the design to mentors on the detector team as a 13-page technical report.</li>
+        </ul>
+        <div class="acts">
+          <button class="btn ghost" type="button" data-doc="/pdfs/cooling-system.pdf" data-doc-title="Satellite readout-board cooling system"><span>Open report · 13 pp</span></button>
+        </div>
+      </article>
+
+      <article class="xp">
+        <div class="xp-top">
+          <span class="logo-chip"><img src="/images/logo-wabtec.svg" alt="Wabtec" width="120" height="40" loading="lazy" decoding="async" /></span>
+          <span class="when">May — Aug 2024</span>
+        </div>
+        <p class="org">Wabtec / GE Transportation</p>
+        <h3>Wire Harnessing &amp; Shop-Floor Tooling</h3>
+        <ul>
+          <li>Developed a wire-harnessing method replacing traditional formboards with stencils.</li>
+          <li>Designed and 3D-printed custom connector blocks that hold varied connector sizes during wire insertion — safer for hands, and cheap enough in PLA that they stopped disappearing.</li>
+          <li>Built a 4× scale crimped-terminal board used at career fairs and STEM events to demonstrate wiring procedures.</li>
+        </ul>
+        <div class="acts">
+          <button class="btn ghost" type="button" data-doc="/pdfs/wabtec-wiring.pdf" data-doc-title="Wabtec internship report out"><span>Open report · 16 pp</span></button>
+        </div>
+      </article>
+
+      <article class="xp">
+        <div class="xp-top">
+          <span class="logo-chip"><img src="/images/arl.png" alt="Penn State Applied Research Laboratory" width="170" height="74" loading="lazy" decoding="async" /></span>
+          <span class="when">Aug 2023 — May 2024</span>
+        </div>
+        <p class="org">Penn State Applied Research Laboratory</p>
+        <h3>Defect Detection in Metal Additive Manufacturing</h3>
+        <ul>
+          <li>Surveyed non-destructive inspection and evaluation methods — ultrasonic testing, pulsed thermography — for what data they can actually yield.</li>
+          <li>Studied the statistical methods behind probability-of-detection so defect claims are quantified rather than asserted.</li>
+          <li>Compiled a 52-page research review that became the reference document for the sampling approach.</li>
+        </ul>
+        <div class="acts">
+          <button class="btn ghost" type="button" data-doc="/pdfs/defect-detection.pdf" data-doc-title="Additive manufacturing defect-detection research"><span>Open review · 52 pp</span></button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section class="section" id="timeline">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">04 — Trace</p>
+      <h2>Five years, plotted on one axis.</h2>
+      <p class="lede">
+        Education, industry and research run as three tracks against the same time base — from a national
+        laboratory in 2021 to a Columbia power-electronics lab now.
+      </p>
+      <div class="rule"></div>
+    </div>
+  </div>
+
+  <div class="tl-shell">
+    <div class="tl-viewport">
+      <div class="wrap">
+        <div class="tl-legend">
+          <span class="tl-legend-title">Trace · 2021 → 2026</span>
+          <span class="tl-key" data-track="edu"><i></i>EDU — Education</span>
+          <span class="tl-key" data-track="ind"><i></i>IND — Industry &amp; labs</span>
+          <span class="tl-key" data-track="res"><i></i>RES — Research &amp; projects</span>
+        </div>
+      </div>
+      <div>
+        <div class="tl-rail">
+
+          <a class="tl-node" data-track="ind" href="#experience">
+            <span class="track">IND</span>
+            <span class="when">Jun 2021 — Jun 2022</span>
+            <h3>Fermilab, U.S. DOE</h3>
+            <p class="org">Intern &amp; Research Assistant</p>
+            <p>Thermal design for satellite CCD read-out boards on a dark-matter detection mission.</p>
+            <span class="go">Experience ↓</span>
+          </a>
+
+          <article class="tl-node" data-track="edu">
+            <span class="track">EDU</span>
+            <span class="when">Aug 2022 — May 2026</span>
+            <h3>B.S. Mechanical Engineering</h3>
+            <p class="org">The Pennsylvania State University</p>
+            <p>Foundation in mechanics, thermal systems and controls; research and capstone work layered on top.</p>
+          </article>
+
+          <a class="tl-node" data-track="res" href="#experience">
+            <span class="track">RES</span>
+            <span class="when">Aug 2023 — May 2024</span>
+            <h3>Penn State Applied Research Laboratory</h3>
+            <p class="org">Research Assistant</p>
+            <p>NDE methods and probability-of-detection statistics for defects in metal additive builds.</p>
+            <span class="go">Experience ↓</span>
+          </a>
+
+          <a class="tl-node" data-track="ind" href="#experience">
+            <span class="track">IND</span>
+            <span class="when">May — Aug 2024</span>
+            <h3>Wabtec / GE Transportation</h3>
+            <p class="org">Mechanical Engineering Intern</p>
+            <p>Stencil-based wire harnessing, printed connector blocks, and shop-floor training hardware.</p>
+            <span class="go">Experience ↓</span>
+          </a>
+
+          <a class="tl-node" data-track="res" href="/work/topology-optimization/#deck">
+            <span class="track">RES</span>
+            <span class="when">Sept 2024 — May 2025</span>
+            <h3>100K Strong in the Americas</h3>
+            <p class="org">Penn State × Universidad del Norte</p>
+            <p>Hybrid PV–wind and water-pumping system designed for Puerto Mocho, Barranquilla, Colombia.</p>
+            <span class="go">Projects ↓</span>
+          </a>
+
+          <a class="tl-node" data-track="ind" href="#experience">
+            <span class="track">IND</span>
+            <span class="when">May — Aug 2025</span>
+            <h3>Northrop Grumman</h3>
+            <p class="org">Manufacturing Engineering Intern</p>
+            <p>Antenna stand design, tool-tracking database, and shop-floor augmented reality support.</p>
+            <span class="go">Experience ↓</span>
+          </a>
+
+          <a class="tl-node" data-track="res" href="/work/insect-detection/">
+            <span class="track">RES</span>
+            <span class="when">Jan — May 2026</span>
+            <h3>AI Insect Detection Capstone</h3>
+            <p class="org">Penn State</p>
+            <p>Field-deployed imaging trap with edge YOLOv8 classifiers; publication in progress.</p>
+            <span class="go">Case study →</span>
+          </a>
+
+          <a class="tl-node" data-track="res" href="/work/topology-optimization/">
+            <span class="track">RES</span>
+            <span class="when">Jan — May 2026</span>
+            <h3>Penn State CEARL</h3>
+            <p class="org">Research Assistant</p>
+            <p>Adjoint and SIMP optimization across electromagnetic, thermal and mechanical objectives.</p>
+            <span class="go">Case study →</span>
+          </a>
+
+          <a class="tl-node" data-track="ind" href="/work/plateoptimize/">
+            <span class="track">IND</span>
+            <span class="when">Mar 2026</span>
+            <h3>PlateOptimize released</h3>
+            <p class="org">App Store · iOS, iPadOS, macOS</p>
+            <p>Base-plate design tool published, with a Streamlit web version alongside it.</p>
+            <span class="go">Case study →</span>
+          </a>
+
+          <a class="tl-node" data-track="ind" href="#experience">
+            <span class="track">IND</span>
+            <span class="when">May — Aug 2026</span>
+            <h3>Northrop Grumman</h3>
+            <p class="org">Manufacturing Engineering Intern — return</p>
+            <p>Second summer on defense manufacturing engineering and tooling.</p>
+            <span class="go">Experience ↓</span>
+          </a>
+
+          <article class="tl-node" data-track="edu">
+            <span class="track">EDU</span>
+            <span class="when">Fall 2026 — Dec 2027</span>
+            <h3>M.S. Electrical Engineering</h3>
+            <p class="org">Columbia University · Robotics &amp; AI</p>
+            <p>Graduate coursework across robotics, AI and electrical systems at Columbia Engineering.</p>
+          </article>
+
+          <a class="tl-node" data-track="res" href="/work/mplab/">
+            <span class="track">RES</span>
+            <span class="when">Fall 2026 — Present</span>
+            <h3>MPLab, Columbia University</h3>
+            <p class="org">Graduate Researcher — Motor Drives &amp; Power Electronics</p>
+            <p>Wound-rotor synchronous machine testing and experimental validation against Simulink models.</p>
+            <span class="go">Case study →</span>
+          </a>
+
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="tl-axis"><span class="prog"></span></div>
+        <p class="tl-hint"><span aria-hidden="true">◀</span> 2021 &nbsp;·&nbsp; scroll to advance the trace &nbsp;·&nbsp; 2026 <span aria-hidden="true">▶</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECT INDEX ============ -->
+<section class="section" id="index">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">05 — Project index</p>
+      <h2>Everything else, still worth your time.</h2>
+      <p class="lede">
+        Robotics, controls, energy systems and software builds. Filter by discipline; documentation opens inline.
+      </p>
+      <div class="rule"></div>
+      <div class="filters" role="group" aria-label="Filter projects by discipline">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="robotics" aria-pressed="false">Robotics</button>
+        <button type="button" data-filter="controls" aria-pressed="false">Controls</button>
+        <button type="button" data-filter="software" aria-pressed="false">Software &amp; AI</button>
+        <button type="button" data-filter="hardware" aria-pressed="false">Hardware</button>
+        <button type="button" data-filter="energy" aria-pressed="false">Energy</button>
+      </div>
+      <p id="filter-status" class="sr-only" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="idx rv" data-d="1">
+
+      <a class="idx-row" data-cat="robotics software" href="https://youtu.be/s-5QHAK5rCs" target="_blank" rel="noopener">
+        <span class="n mono">01</span>
+        <span>
+          <h3>Puzzle Sorting Robot</h3>
+          <p>Dobot Vision Studio and C# workflow that classifies puzzle pieces by edge status and colour, then sorts them into organised stacks.</p>
+        </span>
+        <span class="meta">
+          <span class="cat">Vision robotics · Demo video</span>
+          <span class="arw" aria-hidden="true">↗</span>
+        </span>
+        <span class="thumb" aria-hidden="true"><img src="/media/img/puzzle-640.webp" alt="" loading="lazy" decoding="async" /></span>
+      </a>
+
+      <a class="idx-row" data-cat="robotics controls hardware" href="/pdfs/wall-following-robot.pdf" target="_blank" rel="noopener">
+        <span class="n mono">02</span>
+        <span>
+          <h3>Infrared Wall-Following Robot</h3>
+          <p>Proportional controller on a RedBot holding constant distance from a wall. Gain tuned by hand to K<sub>p</sub>&nbsp;=&nbsp;0.3 — sluggish below it, unstable above — with the IR sensor angled to see both the wall alongside and the turn ahead.</p>
+        </span>
+        <span class="meta">
+          <span class="cat">Controls · PDF</span>
+          <span class="arw" aria-hidden="true">↗</span>
+        </span>
+        <span class="thumb" aria-hidden="true"><img src="/media/img/wall-robot-600.webp" alt="" loading="lazy" decoding="async" /></span>
+      </a>
+
+      <a class="idx-row" data-cat="energy hardware" href="/pdfs/colombia-energy.pdf" target="_blank" rel="noopener">
+        <span class="n mono">03</span>
+        <span>
+          <h3>Hybrid PV–Wind &amp; Water Pumping System — Barranquilla, Colombia</h3>
+          <p>Off-grid energy and water system for the Second Beach of Puerto Mocho, designed with students from Universidad del Norte and simulated in HOMER Pro. 47-page report with full energy, economic and environmental analysis.</p>
+        </span>
+        <span class="meta">
+          <span class="cat">Energy systems · PDF</span>
+          <span class="arw" aria-hidden="true">↗</span>
+        </span>
+        <span class="thumb" aria-hidden="true"><img src="/media/img/clean-energy-640.webp" alt="" loading="lazy" decoding="async" /></span>
+      </a>
+
+      <a class="idx-row" data-cat="software" href="#index" aria-describedby="chatbot-note">
+        <span class="n mono">04</span>
+        <span>
+          <h3>AI Chatbot for Medical Clinics</h3>
+          <p id="chatbot-note">React and Node.js intake tool built on the OpenAI API that asks guided symptom follow-up questions and organises patient responses for doctors.</p>
+        </span>
+        <span class="meta">
+          <span class="cat">React · Node.js · OpenAI</span>
+          <span class="arw" aria-hidden="true">→</span>
+        </span>
+        <span class="thumb" aria-hidden="true"><img src="/media/img/ai-chatbot-640.webp" alt="" loading="lazy" decoding="async" /></span>
+      </a>
+
+      <a class="idx-row" data-cat="hardware robotics" href="https://youtu.be/jIx4o_umv-I" target="_blank" rel="noopener">
+        <span class="n mono">05</span>
+        <span>
+          <h3>Mechanical Automata Exhibit — Children's Museum</h3>
+          <p>An interactive automaton built as a museum exhibit to teach motion and linkages, designed to survive being operated by children all day.</p>
+        </span>
+        <span class="meta">
+          <span class="cat">Mechanisms · Demo video</span>
+          <span class="arw" aria-hidden="true">↗</span>
+        </span>
+        <span class="thumb" aria-hidden="true"><img src="/media/img/automata-640.webp" alt="" loading="lazy" decoding="async" /></span>
+      </a>
+
+      <a class="idx-row" data-cat="hardware energy" href="/pdfs/cooling-system.pdf" target="_blank" rel="noopener">
+        <span class="n mono">06</span>
+        <span>
+          <h3>Satellite Cooling System — Fermilab</h3>
+          <p>Thermal path from the CCD read-out boards of a dark-matter detection satellite to its radiator, designed for a vacuum environment where convection is unavailable.</p>
+        </span>
+        <span class="meta">
+          <span class="cat">Thermal · PDF</span>
+          <span class="arw" aria-hidden="true">↗</span>
+        </span>
+        <span class="thumb" aria-hidden="true"><img src="/media/img/cooling-system-640.webp" alt="" loading="lazy" decoding="async" /></span>
+      </a>
+
+      <a class="idx-row" data-cat="hardware" href="/pdfs/wabtec-wiring.pdf" target="_blank" rel="noopener">
+        <span class="n mono">07</span>
+        <span>
+          <h3>Formboard Wiring &amp; Connector Tooling — Wabtec</h3>
+          <p>Stencil-based replacement for traditional formboards, plus printed connector blocks and a 4× scale terminal-board training model.</p>
+        </span>
+        <span class="meta">
+          <span class="cat">Manufacturing · PDF</span>
+          <span class="arw" aria-hidden="true">↗</span>
+        </span>
+        <span class="thumb" aria-hidden="true"><img src="/media/img/formboard-640.webp" alt="" loading="lazy" decoding="async" /></span>
+      </a>
+
+      <a class="idx-row" data-cat="software" href="/pdfs/defect-detection.pdf" target="_blank" rel="noopener">
+        <span class="n mono">08</span>
+        <span>
+          <h3>Defect-Detection Research — Penn State ARL</h3>
+          <p>Non-destructive inspection methods and probability-of-detection statistics for metal additive manufacturing, compiled into a 52-page review.</p>
+        </span>
+        <span class="meta">
+          <span class="cat">NDE · Statistics · PDF</span>
+          <span class="arw" aria-hidden="true">↗</span>
+        </span>
+        <span class="thumb" aria-hidden="true"><img src="/media/img/insect-detection-3-640.webp" alt="" loading="lazy" decoding="async" /></span>
+      </a>
+
+      <a class="idx-row" data-cat="hardware" href="#experience">
+        <span class="n mono">09</span>
+        <span>
+          <h3>Engineering Mentor — Student Design Team</h3>
+          <p>Guided a student team in St. Charles, Illinois through design reviews for gutter downspout repair solutions, from concept through presentation.</p>
+        </span>
+        <span class="meta">
+          <span class="cat">Sept 2024 — May 2025</span>
+          <span class="arw" aria-hidden="true">→</span>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="rv">
+        <p class="kicker" style="margin-bottom:1.2rem">06 — Contact</p>
+        <h2>Open to robotics, power electronics, controls and intelligent-systems work.</h2>
+        <p class="lede" style="margin-top:1.2rem">
+          Graduate researcher at Columbia, based in New York. Happy to talk about drives, embedded
+          control, vision systems, or anything that has to survive contact with real hardware.
+        </p>
+        <div class="clist" style="margin-top:2.2rem">
+          <a href="mailto:Shivam.gaind@gmail.com"><span class="k">Email</span><span>Shivam.gaind@gmail.com</span><span class="arw" aria-hidden="true">↗</span></a>
+          <a href="tel:+16304886598"><span class="k">Phone</span><span>630-488-6598</span><span class="arw" aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/shivam-gaind/" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span>linkedin.com/in/shivam-gaind</span><span class="arw" aria-hidden="true">↗</span></a>
+          <a href="https://apps.apple.com/us/app/plateoptimize/id6760601892" target="_blank" rel="noopener"><span class="k">App Store</span><span>PlateOptimize</span><span class="arw" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="resume-card rv" data-d="1">
+        <img src="/media/resume-thumb.webp" width="700" height="906" loading="lazy" decoding="async" alt="First page of Shivam Gaind's résumé" />
+        <div class="rc-body">
+          <p>Full résumé — education, experience, projects and skills.</p>
+          <a class="btn solid" href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener"><span>Download PDF</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.3l3.7-3.7 1.4 1.4-6.1 6.1L4.9 11l1.4-1.4 3.7 3.7V3h2Zm-7 16h14v2H5v-2Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <p>© <span class="mono">2026</span> Shivam Gaind — built and maintained by hand.</p>
+  <p class="fl">
+    <a href="mailto:Shivam.gaind@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/shivam-gaind/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    <a href="#top">Back to top ↑</a>
+  </p>
+</footer>
+
+<!-- lightbox / document viewer -->
+<div class="lb" hidden role="dialog" aria-modal="true" aria-label="Media viewer">
+  <div class="lb-top">
+    <p class="lb-cap"></p>
+    <button class="lb-close" type="button">Close ✕</button>
+  </div>
+  <div class="lb-stage"></div>
+  <div class="lb-bot">
+    <span class="lb-count mono"></span>
+    <span class="lb-nav">
+      <button class="lb-prev" type="button" aria-label="Previous">←</button>
+      <button class="lb-next" type="button" aria-label="Next">→</button>
+    </span>
+  </div>
+</div>
+
+<script src="/assets/instrument.js"></script>
+<script>
+/* inline PDF viewer for [data-doc] buttons — falls back to a new tab if embedding is blocked */
+(function () {
+  var lb = document.querySelector(".lb");
+  if (!lb) return;
+  var stage = lb.querySelector(".lb-stage");
+  var cap = lb.querySelector(".lb-cap");
+  var nav = lb.querySelector(".lb-nav");
+  var count = lb.querySelector(".lb-count");
+  document.querySelectorAll("[data-doc]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var url = b.getAttribute("data-doc");
+      var title = b.getAttribute("data-doc-title") || "Document";
+      stage.innerHTML = '<iframe title="' + title + '" src="' + url + '#view=FitH"></iframe>';
+      cap.innerHTML = "<b>Document</b>" + title +
+        ' — <a href="' + url + '" target="_blank" rel="noopener" style="color:var(--phos)">open in a new tab</a>';
+      count.textContent = "PDF";
+      nav.hidden = true;
+      lb.hidden = false;
+      document.body.style.overflow = "hidden";
+      lb.querySelector(".lb-close").focus();
+    });
+  });
+})();
+</script>
+</body>
 </html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multiphysics &amp; Topology Optimization — research | Shivam Gaind</title>
+<meta name="description" content="Adjoint-sensitivity electromagnetic optimization and SIMP topology optimization combined into one multiphysics loop: GRIN lenses and meta-radomes that must raise antenna gain and carry mechanical load at the same time. Penn State research, 25-slide deck viewable inline." />
+<meta name="theme-color" content="#06080a" />
+<link rel="canonical" href="https://www.shivamgaind.com/work/topology-optimization/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Multiphysics &amp; Topology Optimization" />
+<meta property="og:description" content="Adjoint EM optimization, SIMP topology optimization, and the loop that couples them." />
+<meta property="og:image" content="https://www.shivamgaind.com/media/img/optimization-techniques-title-1024.jpg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2306080a'/%3E%3Cpath d='M2 16c4 0 4-9 8-9s4 18 8 18 4-9 8-9 4 4 4 4' fill='none' stroke='%233ee0bd' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="/assets/instrument.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<div class="field" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hdr stuck">
+  <a class="brand" href="/" aria-label="Shivam Gaind — home">
+    <span class="brand-mark" aria-hidden="true">SG</span><span class="brand-name">Shivam Gaind</span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    <a href="/#work">Work</a><a href="/#experience">Experience</a><a href="/#timeline">Timeline</a>
+    <a href="/#index">Projects</a><a href="/#contact">Contact</a>
+  </nav>
+  <div style="display:flex;gap:.6rem;align-items:center">
+    <a class="hdr-cta" href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+<nav class="drawer" id="drawer" aria-label="Mobile">
+  <a href="/#work">Work <span>01</span></a><a href="/#experience">Experience <span>02</span></a>
+  <a href="/#timeline">Timeline <span>03</span></a><a href="/#index">Projects <span>04</span></a>
+  <a href="/#contact">Contact <span>05</span></a>
+</nav>
+
+<main id="main">
+
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="cs-back" href="/#work"><span class="arw" aria-hidden="true">←</span> All work</a>
+    <p class="kicker" style="margin-bottom:1.1rem">Research · 04</p>
+    <h1>Multiphysics &amp; Topology Optimization</h1>
+    <p class="sub">
+      How do you design a structure that has to be electromagnetically excellent and mechanically strong
+      at the same time — when improving one usually costs you the other? This research studies the loop
+      that answers that question: adjoint sensitivity for the fields, SIMP for the material.
+    </p>
+    <div class="cs-meta">
+      <div><span class="k">Role</span><span class="v">Research Assistant</span></div>
+      <div><span class="k">Laboratory</span><span class="v">Penn State CEARL</span></div>
+      <div><span class="k">Period</span><span class="v">Jan — May 2026</span></div>
+      <div><span class="k">Stack</span><span class="v">COMSOL · MATLAB · AWS</span></div>
+    </div>
+    <div class="flag-links" style="margin-top:1.8rem">
+      <a class="btn solid" href="#deck"><span>Browse the 25-slide deck</span></a>
+      <a class="btn" href="/media/optimization-project-slides.pdf" target="_blank" rel="noopener"><span>Open as PDF</span></a>
+      <a class="btn ghost" href="/files/optimization-project-slides.pptx"><span>Original .pptx</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:clamp(2.5rem,5vw,4rem)">
+  <div class="wrap">
+    <div class="cols2">
+      <div class="prose">
+        <p class="kicker">The idea</p>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.1rem)">Let the algorithm decide where the material goes.</h2>
+        <p>
+          Conventional design starts from a shape and tunes its parameters. Topology optimization starts
+          from a block and asks a different question: given a fixed budget of material, where should it be?
+          The design domain is divided into voxels, each with a density between 0 (void) and 1 (solid), and
+          the optimizer drives those densities toward an answer.
+        </p>
+        <p>
+          Under the SIMP model — Solid Isotropic Material with Penalization — a penalty factor pushes
+          intermediate densities toward the extremes, so the result is a structure you can actually build
+          rather than a cloud of half-material.
+        </p>
+        <h3>Compliance, plainly</h3>
+        <p>
+          Mechanically, the objective is compliance: how much the structure bends under load.
+          <span class="mono">c = ½·UᵀKU</span>, with displacements <span class="mono">U</span> solved from
+          <span class="mono">KU = F</span>. Lower compliance means a stiffer structure. Raise a voxel's
+          density and its elasticity rises, which raises stiffness, which lowers displacement, which lowers
+          compliance — the chain the optimizer is pulling on.
+        </p>
+      </div>
+      <div class="prose">
+        <p class="kicker">The trick</p>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.1rem)">Two simulations instead of thousands.</h2>
+        <p>
+          The naive way to find out how each voxel affects antenna gain is to change one, re-run the
+          electromagnetic simulation, and repeat — thousands of simulations for one design.
+        </p>
+        <p>
+          Adjoint optimization gets the same information from two. A <strong>forward simulation</strong>
+          energises the antenna and measures the radiated field. An <strong>adjoint simulation</strong>
+          runs it backwards, injecting a wave from the direction where gain should be maximised. Multiply
+          the forward field by the adjoint field and you have the gradient at every voxel at once:
+          positive means add permittivity there, negative means remove it, near zero means leave it alone.
+        </p>
+        <p>
+          Permittivity itself is controlled physically — by printing voids of different sizes into each
+          voxel, so more air means lower permittivity. The design becomes manufacturable by construction.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">The loop</p>
+      <h2>One iteration of a coupled optimization.</h2>
+      <p class="lede">
+        Electromagnetic and mechanical gradients are computed separately, then combined before the voxel
+        densities are updated. The loop runs until gain stops rising and compliance stops falling.
+      </p>
+      <div class="rule"></div>
+    </div>
+    <div class="diagram">
+      <svg viewBox="0 0 940 330" role="img" aria-label="Optimization loop diagram: an initial voxel design feeds a forward electromagnetic simulation, an adjoint electromagnetic simulation, and a mechanical simulation; their gradients are computed and combined; voxel densities are updated; the loop repeats until gain and compliance converge, producing a final design.">
+        <rect class="dg-box" x="10" y="130" width="132" height="70" rx="2"/>
+        <text class="dg-title" x="76" y="160" text-anchor="middle">Voxel design</text>
+        <text class="dg-label" x="76" y="178" text-anchor="middle">ρ ∈ [0,1]</text>
+
+        <rect class="dg-box hi" x="196" y="24" width="168" height="62" rx="2"/>
+        <text class="dg-title" x="280" y="50" text-anchor="middle">Forward EM sim</text>
+        <text class="dg-label" x="280" y="68" text-anchor="middle">measure gain</text>
+
+        <rect class="dg-box hi" x="196" y="134" width="168" height="62" rx="2"/>
+        <text class="dg-title" x="280" y="160" text-anchor="middle">Adjoint EM sim</text>
+        <text class="dg-label" x="280" y="178" text-anchor="middle">inject at 0°</text>
+
+        <rect class="dg-box" x="196" y="244" width="168" height="62" rx="2"/>
+        <text class="dg-title" x="280" y="270" text-anchor="middle">Mechanical sim</text>
+        <text class="dg-label" x="280" y="288" text-anchor="middle">FEA → compliance</text>
+
+        <rect class="dg-box hi" x="424" y="134" width="150" height="62" rx="2"/>
+        <text class="dg-title" x="499" y="160" text-anchor="middle">Gradients</text>
+        <text class="dg-label" x="499" y="178" text-anchor="middle">combine EM + mech</text>
+
+        <rect class="dg-box" x="634" y="134" width="150" height="62" rx="2"/>
+        <text class="dg-title" x="709" y="160" text-anchor="middle">Filter + bounds</text>
+        <text class="dg-label" x="709" y="178" text-anchor="middle">Gaussian · clamp ε</text>
+
+        <rect class="dg-box hi" x="826" y="134" width="104" height="62" rx="2"/>
+        <text class="dg-title" x="878" y="160" text-anchor="middle">Update ρ</text>
+        <text class="dg-label" x="878" y="178" text-anchor="middle">iterate</text>
+
+        <path class="dg-wire" d="M142 165h54M170 165V55h26M170 165v110h26M364 55h32v110M364 165h60M364 275h32V165M574 165h60M784 165h42"/>
+        <path class="dg-flow" d="M142 165h54M364 165h60M574 165h60M784 165h42"/>
+        <path class="dg-wire" d="M878 196v96H76v-92" stroke-dasharray="4 6"/>
+        <path class="dg-flow" d="M878 196v96H76v-92" style="animation-delay:.8s;opacity:.6"/>
+        <text class="dg-cap" x="380" y="316">repeat until gain stops improving and compliance stops falling</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Applications studied</p>
+      <h2>Two structures, one method.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="cols2">
+      <div class="prose">
+        <h3>GRIN lenses</h3>
+        <p>
+          A gradient-index lens is made from a single material whose internal structure varies, bending
+          waves to focus an antenna's beam. Designed by adjoint optimization rather than transformation
+          optics, the resulting lenses avoid the anisotropic or extreme-permittivity materials that make a
+          design impossible to fabricate.
+        </p>
+        <p class="mono" style="font-size:.75rem;color:var(--muted)">
+          Reference: E. B. Whiting et al., "Adjoint Sensitivity Optimization of Three-Dimensional
+          Directivity-Enhancing, Size-Reducing GRIN Lenses," <em>IEEE Antennas and Wireless Propagation
+          Letters</em>, vol. 21, no. 11, pp. 2166–2170, Nov. 2022.
+        </p>
+      </div>
+      <div class="prose">
+        <h3>Meta-radomes</h3>
+        <p>
+          A radome protects an antenna from the weather — but it sits directly in the beam. The design
+          problem is genuinely multiphysics: improve gain, remain manufacturable, and survive a
+          4400&nbsp;N mechanical load. Electromagnetic and structural objectives are optimized in the same
+          loop rather than one after the other.
+        </p>
+        <p class="mono" style="font-size:.75rem;color:var(--muted)">
+          Reference: T. Burns, A. Huynh, G. Mackertich-Sengerdy, S. Campbell, D. Werner,
+          "Multiphysics Inverse-Design of Multifunctional Freeform Meta-Radomes," <em>Small Structures</em>, vol. 6, 2025.
+        </p>
+      </div>
+    </div>
+
+    <div class="stats s4" style="margin-top:2.4rem">
+      <div class="stat"><span class="v">2</span><span class="k">Simulations per gradient</span><p>Forward and adjoint, instead of one per voxel.</p></div>
+      <div class="stat"><span class="v">~7 min</span><span class="k">Per design generation</span><p>Reported runtime for the coupled multiphysics loop.</p></div>
+      <div class="stat"><span class="v">99 → 88</span><span class="k">Lines of MATLAB</span><p>Sigmund's classic topology code, and its vectorised successor — 10× to 100× faster.</p></div>
+      <div class="stat"><span class="v">4400 N</span><span class="k">Load target</span><p>The mechanical constraint the meta-radome had to survive.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="deck">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Documentation</p>
+      <h2>The full deck, readable here.</h2>
+      <p class="lede">
+        Twenty-five slides covering optimization fundamentals, the adjoint method, SIMP, and a walkthrough
+        of the 99-line MATLAB topology optimization code. Arrow keys navigate.
+      </p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="deck" data-deck="Optimization Techniques" tabindex="0">
+      <div class="deck-stage"><img src="/media/slides/slide-01.webp" alt="Slide 1" /></div>
+      <div class="deck-bar">
+        <div class="grp">
+          <button class="deck-prev" type="button" aria-label="Previous slide">←</button>
+          <button class="deck-next" type="button" aria-label="Next slide">→</button>
+          <span class="deck-count mono"></span>
+        </div>
+        <div class="grp">
+          <a class="btn ghost" href="/media/optimization-project-slides.pdf" target="_blank" rel="noopener"><span>PDF</span></a>
+          <a class="btn ghost" href="/files/optimization-project-slides.pptx"><span>.pptx</span></a>
+        </div>
+      </div>
+      <div class="deck-strip" role="tablist" aria-label="Slide thumbnails">
+        <button type="button" role="tab" data-full="/media/slides/slide-01.webp" aria-label="Slide 1"><img src="/media/slides/t-01.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-02.webp" aria-label="Slide 2"><img src="/media/slides/t-02.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-03.webp" aria-label="Slide 3"><img src="/media/slides/t-03.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-04.webp" aria-label="Slide 4"><img src="/media/slides/t-04.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-05.webp" aria-label="Slide 5"><img src="/media/slides/t-05.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-06.webp" aria-label="Slide 6"><img src="/media/slides/t-06.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-07.webp" aria-label="Slide 7"><img src="/media/slides/t-07.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-08.webp" aria-label="Slide 8"><img src="/media/slides/t-08.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-09.webp" aria-label="Slide 9"><img src="/media/slides/t-09.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-10.webp" aria-label="Slide 10"><img src="/media/slides/t-10.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-11.webp" aria-label="Slide 11"><img src="/media/slides/t-11.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-12.webp" aria-label="Slide 12"><img src="/media/slides/t-12.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-13.webp" aria-label="Slide 13"><img src="/media/slides/t-13.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-14.webp" aria-label="Slide 14"><img src="/media/slides/t-14.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-15.webp" aria-label="Slide 15"><img src="/media/slides/t-15.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-16.webp" aria-label="Slide 16"><img src="/media/slides/t-16.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-17.webp" aria-label="Slide 17"><img src="/media/slides/t-17.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-18.webp" aria-label="Slide 18"><img src="/media/slides/t-18.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-19.webp" aria-label="Slide 19"><img src="/media/slides/t-19.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-20.webp" aria-label="Slide 20"><img src="/media/slides/t-20.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-21.webp" aria-label="Slide 21"><img src="/media/slides/t-21.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-22.webp" aria-label="Slide 22"><img src="/media/slides/t-22.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-23.webp" aria-label="Slide 23"><img src="/media/slides/t-23.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-24.webp" aria-label="Slide 24"><img src="/media/slides/t-24.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+        <button type="button" role="tab" data-full="/media/slides/slide-25.webp" aria-label="Slide 25"><img src="/media/slides/t-25.webp" alt="" loading="lazy" decoding="async" width="84" height="48" /></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose" style="max-width:none">
+      <p class="kicker">Also built</p>
+      <h3>An interactive tool for reading the results</h3>
+      <p style="max-width:var(--readw)">
+        Alongside the study I built an interactive tool to visualise optimization results — so that the
+        output of the loop connects to an engineering decision instead of stopping at a field plot.
+        The work also extended these methods toward thermal systems, minimising thermal compliance to
+        improve heat transfer, and combined thermal, mechanical, fluid and electromagnetic objectives in
+        one multiphysics framework.
+      </p>
+      <div class="chips" style="margin-top:1.4rem">
+        <span>Topology optimization</span><span>Adjoint sensitivity</span><span>SIMP</span>
+        <span>FEA</span><span>Electromagnetics</span><span>Thermal compliance</span>
+        <span>GRIN lenses</span><span>Meta-radomes</span><span>COMSOL</span><span>MATLAB</span><span>AWS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-next">
+  <div class="wrap">
+    <a href="/work/mplab/">
+      <span class="k">Next case study</span>
+      <h2>Wound-Rotor Synchronous Machine Testing →</h2>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <p>© <span class="mono">2026</span> Shivam Gaind</p>
+  <p class="fl">
+    <a href="/">Home</a>
+    <a href="mailto:Shivam.gaind@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/shivam-gaind/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">Résumé</a>
+  </p>
+</footer>
+
+<script src="/assets/instrument.js"></script>
+</body>
+</html>

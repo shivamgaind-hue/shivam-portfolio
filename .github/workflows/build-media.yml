@@ -1,0 +1,64 @@
+name: Build media derivatives
+
+# media/ is generated output, not source. This rebuilds it from the originals in
+# images/, videos/, files/ and pdfs/ so the binaries never have to be committed by
+# hand. Runs on demand, or whenever the build script or a source asset changes.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "tools/build_media.py"
+      - ".github/workflows/build-media.yml"
+      - "images/**"
+      - "videos/**"
+      - "files/**"
+      - "pdfs/shivam-gaind-resume.pdf"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-media-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tooling
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg poppler-utils libreoffice-impress
+          python3 -m pip install --quiet --upgrade Pillow
+
+      - name: Build media
+        run: python3 tools/build_media.py
+
+      - name: Sanity check
+        run: |
+          set -e
+          test -f media/bee-entering-trap.mp4
+          test -f media/optimization-project-slides.pdf
+          test -f media/resume-thumb.webp
+          test "$(ls media/slides/slide-*.webp | wc -l)" -eq 25
+          # the transcode must be H.264, or Chrome and Firefox still cannot play it
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name \
+            -of default=nw=1:nk=1 media/bee-entering-trap.mp4 | grep -qx h264
+          echo "media/ looks correct: $(find media -type f | wc -l) files"
+
+      - name: Commit media
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A media
+          if git diff --cached --quiet; then
+            echo "media/ unchanged — nothing to commit"
+          else
+            git commit -m "Build media derivatives from source assets [skip ci]"
+            git push
+          fi

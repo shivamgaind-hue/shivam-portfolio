@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI-Based Insect Detection System — capstone | Shivam Gaind</title>
+<meta name="description" content="A Malaise-trap-inspired imaging instrument that photographs insects instead of killing them: ESP32-controlled lighting, edge compute, two YOLOv8 classifiers, and Grad-CAM validation. Penn State capstone, publication in progress." />
+<meta name="theme-color" content="#06080a" />
+<link rel="canonical" href="https://www.shivamgaind.com/work/insect-detection/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AI-Based Insect Detection System" />
+<meta property="og:description" content="Field-deployed imaging trap with edge YOLOv8 classifiers and Grad-CAM validation." />
+<meta property="og:image" content="https://www.shivamgaind.com/media/img/insect-detection-1-1024.jpg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2306080a'/%3E%3Cpath d='M2 16c4 0 4-9 8-9s4 18 8 18 4-9 8-9 4 4 4 4' fill='none' stroke='%233ee0bd' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="/assets/instrument.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<div class="field" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hdr stuck">
+  <a class="brand" href="/" aria-label="Shivam Gaind — home">
+    <span class="brand-mark" aria-hidden="true">SG</span><span class="brand-name">Shivam Gaind</span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    <a href="/#work">Work</a><a href="/#experience">Experience</a><a href="/#timeline">Timeline</a>
+    <a href="/#index">Projects</a><a href="/#contact">Contact</a>
+  </nav>
+  <div style="display:flex;gap:.6rem;align-items:center">
+    <a class="hdr-cta" href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+<nav class="drawer" id="drawer" aria-label="Mobile">
+  <a href="/#work">Work <span>01</span></a><a href="/#experience">Experience <span>02</span></a>
+  <a href="/#timeline">Timeline <span>03</span></a><a href="/#index">Projects <span>04</span></a>
+  <a href="/#contact">Contact <span>05</span></a>
+</nav>
+
+<main id="main">
+
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="cs-back" href="/#work"><span class="arw" aria-hidden="true">←</span> All work</a>
+    <p class="kicker" style="margin-bottom:1.1rem">Capstone instrument · 03</p>
+    <h1>AI-Based Insect Detection System</h1>
+    <p class="sub">
+      A Malaise trap that photographs insects instead of killing them. Mesh wings funnel flying insects
+      into a lit photo chamber; edge compute runs two YOLOv8 classifiers on what walks in; Grad-CAM
+      confirms the model is looking at the insect and not the backdrop.
+    </p>
+    <div class="cs-meta">
+      <div><span class="k">Role</span><span class="v">Capstone team</span></div>
+      <div><span class="k">Institution</span><span class="v">Penn State</span></div>
+      <div><span class="k">Period</span><span class="v">Jan — May 2026</span></div>
+      <div><span class="k">Status</span><span class="v">Publication in progress</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:clamp(2rem,4vw,3rem)">
+  <div class="wrap">
+    <figure class="cs-figure">
+      <picture>
+        <source type="image/webp" srcset="/media/img/insect-detection-1-640.webp 640w, /media/img/insect-detection-1-1024.webp 1024w, /media/img/insect-detection-1-1600.webp 1600w" sizes="(min-width:1400px) 1240px, 96vw" />
+        <img src="/media/img/insect-detection-1-1600.jpg" width="1600" height="1200" decoding="async" alt="The trap deployed on a lawn between campus buildings: a black mesh structure on guy lines with a white backlit panel at its centre" />
+      </picture>
+      <figcaption><b>Field deployment</b> The full instrument staked out on open ground. The mesh wings intercept flying insects; the white panel at the centre is the lit imaging surface they are funnelled toward.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cols2">
+      <div class="prose">
+        <p class="kicker">Problem</p>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.1rem)">Counting insects is destructive, slow, and done by hand.</h2>
+        <p>
+          The standard tool for surveying flying insects is a Malaise trap: a tent of mesh that intercepts
+          insects in flight and funnels them upward into a collection jar. It works, but the sample is dead
+          by the time anyone sees it, and identification is a human sitting at a microscope weeks later.
+        </p>
+        <p>
+          We kept the trap's geometry and replaced its endpoint. Instead of a jar, insects arrive at a
+          photo chamber. The instrument images them under controlled lighting, classifies them on the spot,
+          and lets them go.
+        </p>
+        <p class="callout" style="margin-top:1.4rem">
+          The hard part was never the model. It was building a chamber where the same insect looks the
+          same twice.
+        </p>
+      </div>
+      <div class="prose">
+        <p class="kicker">Approach</p>
+        <ul style="margin-top:.4rem">
+          <li><strong>Trap workflow.</strong> A Malaise-inspired structure that funnels flying insects into a photo chamber rather than a kill jar.</li>
+          <li><strong>Controlled lighting.</strong> ESP32-driven LED panels behind a diffuser, so exposure and colour are a constant rather than a variable.</li>
+          <li><strong>Edge computing.</strong> Jetson Nano processing on the trap itself — no network dependency in a field where there isn't one.</li>
+          <li><strong>Two YOLOv8 classifiers.</strong> A staged pipeline rather than a single model asked to do everything at once.</li>
+          <li><strong>Grad-CAM validation.</strong> Heat maps over each decision, alongside confidence scores, to check the model is attending to the insect.</li>
+        </ul>
+        <div class="chips" style="margin-top:1.4rem">
+          <span class="hot">Publication in progress</span><span>YOLOv8</span><span>Jetson Nano</span>
+          <span>ESP32</span><span>Grad-CAM</span><span>Computer vision</span><span>Edge AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Signal chain</p>
+      <h2>From a moth in flight to a labelled record.</h2>
+      <p class="lede">Every stage exists to remove a variable from the one after it.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="diagram">
+      <svg viewBox="0 0 940 300" role="img" aria-label="Signal chain diagram: flying insect enters mesh wings, is funnelled into a photo chamber, lit by an ESP32-controlled LED panel, imaged by a camera, processed on edge compute by two YOLOv8 classifiers in series, validated with Grad-CAM, and recorded as a labelled result with a confidence score.">
+        <rect class="dg-box" x="10" y="96" width="118" height="70" rx="2"/>
+        <text class="dg-title" x="69" y="126" text-anchor="middle">Mesh wings</text>
+        <text class="dg-label" x="69" y="144" text-anchor="middle">intercept</text>
+
+        <rect class="dg-box" x="168" y="96" width="128" height="70" rx="2"/>
+        <text class="dg-title" x="232" y="126" text-anchor="middle">Photo chamber</text>
+        <text class="dg-label" x="232" y="144" text-anchor="middle">funnel + settle</text>
+
+        <rect class="dg-box hi" x="168" y="16" width="128" height="56" rx="2"/>
+        <text class="dg-title" x="232" y="40" text-anchor="middle">LED panel</text>
+        <text class="dg-label" x="232" y="58" text-anchor="middle">ESP32 controlled</text>
+        <path class="dg-wire" d="M232 72v24"/>
+        <path class="dg-flow" d="M232 72v24"/>
+
+        <rect class="dg-box" x="336" y="96" width="118" height="70" rx="2"/>
+        <text class="dg-title" x="395" y="126" text-anchor="middle">Camera</text>
+        <text class="dg-label" x="395" y="144" text-anchor="middle">fixed optics</text>
+
+        <rect class="dg-box hi" x="494" y="76" width="150" height="110" rx="2"/>
+        <text class="dg-title" x="569" y="104" text-anchor="middle">Edge compute</text>
+        <text class="dg-label" x="569" y="130" text-anchor="middle">YOLOv8 · stage 1</text>
+        <text class="dg-label" x="569" y="152" text-anchor="middle">YOLOv8 · stage 2</text>
+
+        <rect class="dg-box" x="684" y="16" width="140" height="60" rx="2"/>
+        <text class="dg-title" x="754" y="42" text-anchor="middle">Grad-CAM</text>
+        <text class="dg-label" x="754" y="60" text-anchor="middle">attention check</text>
+
+        <rect class="dg-box hi" x="684" y="140" width="140" height="70" rx="2"/>
+        <text class="dg-title" x="754" y="170" text-anchor="middle">Labelled record</text>
+        <text class="dg-label" x="754" y="188" text-anchor="middle">class + confidence</text>
+
+        <rect class="dg-box" x="864" y="140" width="66" height="70" rx="2"/>
+        <text class="dg-title" x="897" y="170" text-anchor="middle">Release</text>
+        <text class="dg-label" x="897" y="188" text-anchor="middle">alive</text>
+
+        <path class="dg-wire" d="M128 131h40M296 131h40M454 131h40M644 131h20M664 46h20M664 175h20M664 46v129M824 175h40"/>
+        <path class="dg-flow" d="M128 131h40M296 131h40M454 131h40M644 131h20"/>
+        <path class="dg-flow" d="M824 175h40" style="animation-delay:.6s"/>
+        <text class="dg-cap" x="14" y="200">insect in →</text>
+        <text class="dg-cap" x="700" y="240">← nothing is collected</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Hardware</p>
+      <h2>Built to sit outside and keep working.</h2>
+      <p class="lede">Select an image to open it full size.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="gal g3" data-gallery>
+      <button type="button" data-lb="/media/img/insect-detection-2-1024.webp" data-lb-label="Lighting"
+              data-lb-alt="The LED backlight panel held open, showing addressable LED strips, wiring harness and a breadboarded driver behind a diffuser sheet">
+        <img src="/media/img/insect-detection-2-640.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="LED backlight panel opened to reveal addressable LED strips, wiring and a breadboarded driver behind a diffuser" />
+        <span class="zi">Enlarge</span>
+      </button>
+      <button type="button" data-lb="/media/img/insect-detection-3-1600.webp" data-lb-label="Imaging module"
+              data-lb-alt="Interior of the printed imaging enclosure: compute board with real-time-clock power management, ribbon-cable camera with a C-mount lens, and power cabling">
+        <img src="/media/img/insect-detection-3-640.webp" width="1600" height="1192" loading="lazy" decoding="async" alt="Interior of the printed imaging enclosure with compute board, ribbon-cable camera and C-mount lens" />
+        <span class="zi">Enlarge</span>
+      </button>
+      <button type="button" data-lb="/media/img/insect-detection-4-1024.webp" data-lb-label="Enclosure"
+              data-lb-alt="The assembled green printed enclosure with latches and hinges, measured against a machinist's rule at roughly thirteen inches tall">
+        <img src="/media/img/insect-detection-4-640.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Assembled printed enclosure with latches and hinges, measured against a machinist's rule" />
+        <span class="zi">Enlarge</span>
+      </button>
+    </div>
+    <div class="stats s3" style="margin-top:1.5rem">
+      <div class="stat"><span class="v">ESP32</span><span class="k">Lighting control</span><p>Addressable LED strips behind a diffuser, so the chamber is lit the same way every time.</p></div>
+      <div class="stat"><span class="v">Edge</span><span class="k">On-trap compute</span><p>Inference happens on the instrument. No connectivity assumed in the field.</p></div>
+      <div class="stat"><span class="v">Printed</span><span class="k">Enclosure</span><p>Latched and hinged — openable for service in the field, closed the rest of the time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="field-video">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Evidence</p>
+      <h2>A bee entering the trap.</h2>
+      <p class="lede">Recorded during field testing. This is the moment the whole instrument is built around.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="videoblock">
+      <video controls preload="none" playsinline poster="/media/bee-entering-trap-poster.jpg"
+             width="1280" height="720" aria-label="Video of a bee entering the insect trap during field testing">
+        <source src="/media/bee-entering-trap.mp4" type="video/mp4" />
+        <source src="/videos/bee-entering-trap.mov" type="video/quicktime" />
+        <p style="padding:1rem;color:var(--muted)">
+          Your browser cannot play this video.
+          <a href="/media/bee-entering-trap.mp4" style="color:var(--phos)">Download the MP4</a>.
+        </p>
+      </video>
+      <p class="vb-cap">Field test footage — a bee entering the trap. Original capture re-encoded to H.264 for browser playback; the source file remains available <a href="/videos/bee-entering-trap.mov" style="color:var(--phos)">here</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cols2">
+      <div class="prose">
+        <p class="kicker">Validation</p>
+        <h3>Why Grad-CAM was non-negotiable</h3>
+        <p>
+          A classifier can be right for the wrong reason. Trained on images from one chamber under one
+          lighting rig, a model can quietly learn the chamber instead of the insect — and it will score
+          beautifully right up until the day the backdrop changes.
+        </p>
+        <p>
+          Grad-CAM produces a heat map of which pixels drove a given prediction. Reading those alongside
+          the confidence score turns "the model says bee" into "the model says bee, and it is looking at
+          the bee." That distinction is the difference between a demo and an instrument.
+        </p>
+      </div>
+      <div class="prose">
+        <p class="kicker">Reception</p>
+        <h3>Where it has been shown</h3>
+        <ul>
+          <li>Demonstrated to engineering leadership at Penn State and at Ohio State.</li>
+          <li>Research is in progress toward an official publication.</li>
+        </ul>
+        <h3 style="margin-top:1.6rem">What I owned</h3>
+        <p>
+          The instrument side: the imaging chamber and lighting behaviour, the enclosure that has to open
+          for service and close against weather, and the pipeline that carries an image from the camera to
+          a labelled, validated record.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-next">
+  <div class="wrap">
+    <a href="/work/topology-optimization/">
+      <span class="k">Next case study</span>
+      <h2>Multiphysics &amp; Topology Optimization →</h2>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <p>© <span class="mono">2026</span> Shivam Gaind</p>
+  <p class="fl">
+    <a href="/">Home</a>
+    <a href="mailto:Shivam.gaind@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/shivam-gaind/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="/pdfs/shivam-gaind-resume.pdf" target="_blank" rel="noopener">Résumé</a>
+  </p>
+</footer>
+
+<div class="lb" hidden role="dialog" aria-modal="true" aria-label="Media viewer">
+  <div class="lb-top"><p class="lb-cap"></p><button class="lb-close" type="button">Close ✕</button></div>
+  <div class="lb-stage"></div>
+  <div class="lb-bot">
+    <span class="lb-count mono"></span>
+    <span class="lb-nav"><button class="lb-prev" type="button" aria-label="Previous">←</button><button class="lb-next" type="button" aria-label="Next">→</button></span>
+  </div>
+</div>
+
+<script src="/assets/instrument.js"></script>
+</body>
+</html>
