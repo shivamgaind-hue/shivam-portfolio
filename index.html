@@ -156,8 +156,8 @@
       </article>
       <article class="cap">
         <p class="n">03</p><h3>Robotics &amp; Vision</h3>
-        <p>Machine-vision sorting cells, IR-guided mobile robots, and a field-deployed imaging trap running YOLOv8 classifiers on edge hardware.</p>
-        <p class="tags"><span>YOLOv8</span><span>Grad-CAM</span><span>Dobot</span><span>C#</span></p>
+        <p>Machine-vision sorting cells, IR-guided mobile robots, a field-deployed imaging trap running YOLOv8 on edge hardware, and computer vision that reads part geometry straight off engineering drawings.</p>
+        <p class="tags"><span>YOLOv8</span><span>Grad-CAM</span><span>RAG</span><span>Dobot</span><span>C#</span></p>
       </article>
       <article class="cap">
         <p class="n">04</p><h3>Optimization</h3>
@@ -171,8 +171,8 @@
       </article>
       <article class="cap">
         <p class="n">06</p><h3>Advanced Engineering &amp; Manufacturing</h3>
-        <p>Defense tooling and AR-assisted assembly at Northrop Grumman, satellite thermal design at Fermilab, and harness-process work at Wabtec.</p>
-        <p class="tags"><span>Tooling</span><span>Thermal</span><span>Process design</span><span>NDE</span></p>
+        <p>Robotic dispensing, an AI shop-floor assistant and AR-assisted assembly at Northrop Grumman, satellite thermal design at Fermilab, and connector design at Wabtec.</p>
+        <p class="tags"><span>Robotic cells</span><span>Thermal</span><span>Process design</span><span>NDE</span></p>
       </article>
     </div>
   </div>
@@ -326,14 +326,15 @@
           <h3><a href="/work/insect-detection/">AI-Based Insect Detection System</a></h3>
           <p>
             A Malaise-trap-inspired instrument that photographs insects instead of killing them. Mesh wings funnel
-            flying insects into a photo chamber lit by ESP32-controlled LED panels; two YOLOv8 classifiers run on
-            edge compute, and Grad-CAM heat maps confirm the models are looking at the insect and not the background.
+            flying insects into a photo chamber lit by ESP32-controlled LED panels; two YOLOv8 models running on an
+            NVIDIA Jetson Nano classify what walks in by 4 orders and 10 families at close to 95% accuracy, and
+            Grad-CAM heat maps confirm they are looking at the insect and not the background.
           </p>
           <div class="spec">
             <div><span class="k">Role</span><span class="v">Capstone team</span></div>
             <div><span class="k">Period</span><span class="v">Jan — May 2026</span></div>
             <div><span class="k">Pipeline</span><span class="v">Trap → chamber → imaging → YOLOv8 ×2</span></div>
-            <div><span class="k">Status</span><span class="v">Publication in progress</span></div>
+            <div><span class="k">Result</span><span class="v">4 orders · 10 families · ~95%</span></div>
           </div>
           <div class="chips">
             <span class="hot">Publication in progress</span><span>YOLOv8</span><span>Jetson Nano</span>
@@ -405,14 +406,15 @@
       <article class="xp">
         <div class="xp-top">
           <span class="logo-chip"><img src="/images/Northrop-Grumman-logo.png" alt="Northrop Grumman" width="160" height="90" loading="lazy" decoding="async" /></span>
-          <span class="when">Summer 2025 &amp; 2026</span>
+          <span class="when">May — Jul 2025 &amp; 2026</span>
         </div>
         <p class="org">Manufacturing Engineering Intern</p>
         <h3>Northrop Grumman</h3>
         <ul>
-          <li>Designed an 80&nbsp;lb radio antenna stand allowing secure mounting and 45° rotation in both directions while maintaining full stability.</li>
-          <li>Developed a tool-tracking database letting technicians add, check out, return, and update sharpening or decommissioning status for tooling.</li>
-          <li>Supported the Shop Floor Augmented Reality project through hardware testing and detailed procedures guiding technicians through assembly.</li>
+          <li>Designed, built and tested a <strong>robotic dispensing system</strong> — robotic arm, pneumatic pressure regulation and solenoid-controlled actuation in one automated assembly — cutting the caulking process from 40 minutes to 7.</li>
+          <li>Built a <strong>Machine Shop AI Assistant</strong>: computer vision extracts part geometry from drawings and auto-generates routings across the shop's CNC mills, lathes, press brake, turret punch press and band saws, flags drawings whose tolerances exceed machine capability, and answers troubleshooting questions through a RAG chatbot trained on equipment manuals.</li>
+          <li>Evaluated AR headset hardware — HoloLens&nbsp;2, Apple Vision Pro, Meta Quest — for manufacturing workflows, and helped implement hands-free digital work instructions.</li>
+          <li>Also designed an 80&nbsp;lb radio antenna stand with 45° rotation in both directions, and a tool-tracking database covering checkout, return and sharpening status.</li>
         </ul>
       </article>
 
@@ -439,8 +441,9 @@
           <span class="when">May — Aug 2024</span>
         </div>
         <p class="org">Wabtec / GE Transportation</p>
-        <h3>Wire Harnessing &amp; Shop-Floor Tooling</h3>
+        <h3>Connector Design &amp; Shop-Floor Tooling</h3>
         <ul>
+          <li>Selected as 1 of 200 interns from a pool of 6,000+ applicants; carried a connector design through the full trade-study, design, test and validation lifecycle, ending in a cost-effective part implemented factory-wide.</li>
           <li>Developed a wire-harnessing method replacing traditional formboards with stencils.</li>
           <li>Designed and 3D-printed custom connector blocks that hold varied connector sizes during wire insertion — safer for hands, and cheap enough in PLA that they stopped disappearing.</li>
           <li>Built a 4× scale crimped-terminal board used at career fairs and STEM events to demonstrate wiring procedures.</li>
@@ -458,9 +461,9 @@
         <p class="org">Penn State Applied Research Laboratory</p>
         <h3>Defect Detection in Metal Additive Manufacturing</h3>
         <ul>
-          <li>Surveyed non-destructive inspection and evaluation methods — ultrasonic testing, pulsed thermography — for what data they can actually yield.</li>
-          <li>Studied the statistical methods behind probability-of-detection so defect claims are quantified rather than asserted.</li>
-          <li>Compiled a 52-page research review that became the reference document for the sampling approach.</li>
+          <li>Developed algorithms to identify the quantity and size of defects arising in metal-based additive manufacturing, supporting part quality verification.</li>
+          <li>Applied random sampling and statistical techniques to analyse defect distributions and establish a new probability model.</li>
+          <li>Surveyed the non-destructive inspection methods behind it — ultrasonic testing, pulsed thermography — in a 52-page review that became the reference for the sampling approach.</li>
         </ul>
         <div class="acts">
           <button class="btn ghost" type="button" data-doc="/pdfs/defect-detection.pdf" data-doc-title="Additive manufacturing defect-detection research"><span>Open review · 52 pp</span></button>
@@ -537,7 +540,7 @@
             <span class="when">Sept 2024 — May 2025</span>
             <h3>100K Strong in the Americas</h3>
             <p class="org">Penn State × Universidad del Norte</p>
-            <p>Hybrid PV–wind and water-pumping system designed for Puerto Mocho, Barranquilla, Colombia.</p>
+            <p>$3,000 grant recipient; hybrid PV–wind and water-pumping system for Puerto Mocho, Barranquilla.</p>
             <span class="go">Projects ↓</span>
           </a>
 
@@ -546,7 +549,7 @@
             <span class="when">May — Aug 2025</span>
             <h3>Northrop Grumman</h3>
             <p class="org">Manufacturing Engineering Intern</p>
-            <p>Antenna stand design, tool-tracking database, and shop-floor augmented reality support.</p>
+            <p>Robotic dispensing cell, antenna stand design, tool-tracking database and shop-floor AR support.</p>
             <span class="go">Experience ↓</span>
           </a>
 
@@ -555,7 +558,7 @@
             <span class="when">Jan — May 2026</span>
             <h3>AI Insect Detection Capstone</h3>
             <p class="org">Penn State</p>
-            <p>Field-deployed imaging trap with edge YOLOv8 classifiers; publication in progress.</p>
+            <p>Field-deployed imaging trap; two YOLOv8 models to 4 orders and 10 families at ~95% accuracy.</p>
             <span class="go">Case study →</span>
           </a>
 
@@ -582,7 +585,7 @@
             <span class="when">May — Aug 2026</span>
             <h3>Northrop Grumman</h3>
             <p class="org">Manufacturing Engineering Intern — return</p>
-            <p>Second summer on defense manufacturing engineering and tooling.</p>
+            <p>Machine Shop AI Assistant: computer vision on drawings, auto-generated CNC routings, RAG troubleshooting.</p>
             <span class="go">Experience ↓</span>
           </a>
 
@@ -591,7 +594,7 @@
             <span class="when">Fall 2026 — Dec 2027</span>
             <h3>M.S. Electrical Engineering</h3>
             <p class="org">Columbia University · Robotics &amp; AI</p>
-            <p>Graduate coursework across robotics, AI and electrical systems at Columbia Engineering.</p>
+            <p>Specialising in AI engineering and signal processing / control systems at Columbia Engineering.</p>
           </article>
 
           <a class="tl-node" data-track="res" href="/work/mplab/">
@@ -666,7 +669,7 @@
         <span class="n mono">03</span>
         <span>
           <h3>Hybrid PV–Wind &amp; Water Pumping System — Barranquilla, Colombia</h3>
-          <p>Off-grid energy and water system for the Second Beach of Puerto Mocho, designed with students from Universidad del Norte and simulated in HOMER Pro. 47-page report with full energy, economic and environmental analysis.</p>
+          <p>Off-grid energy and water system for the Second Beach of Puerto Mocho, designed with students from Universidad del Norte and simulated in HOMER Pro. Selected as a 100K Strong in the Americas grant recipient with $3,000 in funding; 47-page report with full energy, economic and environmental analysis.</p>
         </span>
         <span class="meta">
           <span class="cat">Energy systems · PDF</span>
@@ -731,7 +734,7 @@
         <span class="n mono">08</span>
         <span>
           <h3>Defect-Detection Research — Penn State ARL</h3>
-          <p>Non-destructive inspection methods and probability-of-detection statistics for metal additive manufacturing, compiled into a 52-page review.</p>
+          <p>Algorithms to identify the quantity and size of defects in metal additive manufacturing, with random sampling and statistical techniques used to establish a new probability model. Backed by a 52-page review of NDE methods.</p>
         </span>
         <span class="meta">
           <span class="cat">NDE · Statistics · PDF</span>
